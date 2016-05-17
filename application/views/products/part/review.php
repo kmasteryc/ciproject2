@@ -1,0 +1,1 @@
+<a href="#" id="lnk_show_prod_info"><h3 id="review">Review <?= $product['product_name'] ?></h3></a>

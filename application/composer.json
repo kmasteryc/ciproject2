@@ -1,0 +1,7 @@
+{
+    "require": {
+        "eventviva/php-image-resize": "^1.5",
+        "google/recaptcha": "~1.1",
+        "nesbot/carbon": "^1.21"
+    }
+}
