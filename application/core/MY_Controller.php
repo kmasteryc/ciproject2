@@ -11,10 +11,16 @@ class MY_Controller extends MX_Controller
 
     public function __construct($model = "")
     {
+        $this->benchmark->mark('code_start');
+        $this->output->cache("30");
         parent::__construct();
         if ($model != "") {
             $this->load->model($model);
         }
+    }
+    public function __destruct(){
+        $this->benchmark->mark('code_end');
+        echo '<p style="text-align: right">'.$this->benchmark->elapsed_time('code_start', 'code_end').'</p>';
     }
     public function get_dialog()
     {
