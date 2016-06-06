@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.6.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 17, 2016 at 04:46 PM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- Generation Time: Jun 06, 2016 at 02:15 PM
+-- Server version: 5.7.12
+-- PHP Version: 7.0.5-2+deb.sury.org~trusty+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `codeiginter2`
+-- Database: `ciproject2`
 --
 
 -- --------------------------------------------------------
@@ -43,7 +43,8 @@ CREATE TABLE `bills` (
 --
 
 INSERT INTO `bills` (`id`, `bill_name`, `bill_address`, `bill_note`, `bill_products`, `bill_phone`, `bill_total`, `bill_state`, `bill_done`) VALUES
-(3, 'Ko co gi ca nhe', 'oi ne iu', '</pre></pre></pre></pre></pre></pre></pre></pre></pre></pre></pre>', '{"9a1158154dfa42caddbd0694a4e9bdc8":{"product_id":"52","product_name":"HTC One A10","product_quantity":1,"product_price":11000000,"product_subtotal":11000000}}', 1699999999, 11000000, '{"1":{"state_time":"2016-05-15 15:46:05","state_commiter":"Ko co gi ca nhe"},"2":{"state_time":"2016-05-15 15:46:11","state_commiter":"215"},"3":{"state_time":"2016-05-16 15:08:41","state_commiter":"215"},"4":0}', 0);
+(3, 'Ko co gi ca nhe', 'oi ne iu', '</pre></pre></pre></pre></pre></pre></pre></pre></pre></pre></pre>', '{"9a1158154dfa42caddbd0694a4e9bdc8":{"product_id":"52","product_name":"HTC One A10","product_quantity":1,"product_price":11000000,"product_subtotal":11000000}}', 1699999999, 11000000, '{"1":{"state_time":"2016-05-15 15:46:05","state_commiter":"Ko co gi ca nhe"},"2":{"state_time":"2016-05-15 15:46:11","state_commiter":"215"},"3":{"state_time":"2016-05-16 15:08:41","state_commiter":"215"},"4":0}', 0),
+(4, 'Tran Duy Khanh', 'Ha Noi', 'Xin chao quy vi', '{"3295c76acbf4caaed33c36b1b5fc2cb1":{"product_id":"66","product_name":"Lenovo Yoga","product_quantity":1,"product_price":4400000,"product_subtotal":4400000}}', 1693007469, 4400000, '{"1":{"state_time":"2016-06-05 14:30:06","state_commiter":"Tran Duy Khanh"},"2":0,"3":0,"4":0}', 0);
 
 -- --------------------------------------------------------
 
@@ -85,6 +86,7 @@ CREATE TABLE `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
+('94fe2091d875023ff891e2362b79b28e9dae938b', '192.168.10.1', 1465145221, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436353134353231353b67756573747c733a31323a225472616e2056616e204e616d223b636172745f636f6e74656e74737c613a333a7b733a31303a22636172745f746f74616c223b643a31383439303030303b733a31313a22746f74616c5f6974656d73223b643a313b733a33323a226135373731626365393365323030633336663763643964666430653564656161223b613a363a7b733a323a226964223b733a323a223338223b733a333a22717479223b643a313b733a353a227072696365223b643a31383439303030303b733a343a226e616d65223b733a32323a2253616d73756e672047616c6178792053372045646765223b733a353a22726f776964223b733a33323a226135373731626365393365323030633336663763643964666430653564656161223b733a383a22737562746f74616c223b643a31383439303030303b7d7d),
 ('e8648cdd91c8eafe262d5f11e5043704b82a134a', '192.168.2.144', 1463494142, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436333439333933343b67756573747c733a393a22546573742063616920223b757365727c733a353a2261646d696e223b6c6576656c7c733a313a2232223b69647c733a333a22323135223b636172745f636f6e74656e74737c613a333a7b733a31303a22636172745f746f74616c223b643a31383439303030303b733a31313a22746f74616c5f6974656d73223b643a313b733a33323a226135373731626365393365323030633336663763643964666430653564656161223b613a363a7b733a323a226964223b733a323a223338223b733a333a22717479223b643a313b733a353a227072696365223b643a31383439303030303b733a343a226e616d65223b733a32323a2253616d73756e672047616c6178792053372045646765223b733a353a22726f776964223b733a33323a226135373731626365393365323030633336663763643964666430653564656161223b733a383a22737562746f74616c223b643a31383439303030303b7d7d4b4346494e4445527c613a313a7b733a383a2264697361626c6564223b623a303b7d);
 
 -- --------------------------------------------------------
@@ -127,7 +129,7 @@ INSERT INTO `comments` (`id`, `comment_product`, `comment_user`, `comment_guest`
 (78, 37, 215, '', '', 'sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi ', '2016-05-10 22:35:41', NULL),
 (79, 37, 215, '', '', 'test reply cai test reply cai test reply cai test reply cai test reply cai ', '2016-05-10 22:40:48', 78),
 (80, 37, 215, '', '', 'Reply cai cho no mau nhe', '2016-05-10 22:45:33', 79),
-(82, 37, 215, '', '', '    $(''#comment_box'').html(''<div><img style="left: 50%; position: relative" id="loader-img" alt="" src="'' base_url ''public/img/loading2.gif" /></div>'');\n', '2016-05-10 22:55:50', NULL),
+(82, 37, 215, '', '', '    $(\'#comment_box\').html(\'<div><img style="left: 50%; position: relative" id="loader-img" alt="" src="\' base_url \'public/img/loading2.gif" /></div>\');\n', '2016-05-10 22:55:50', NULL),
 (86, 37, 215, '', '', 'Reply ne Reply ne Reply ne Reply ne Reply ne ', '2016-05-11 00:11:26', 82),
 (87, 37, 215, '', '', 'T ko reply dau T ko reply dau T ko reply dau T ko reply dau ', '2016-05-11 00:12:06', 78),
 (88, 37, 215, '', '', 'T ko rep lai chung may dau T ko rep lai chung may dau T ko rep lai chung may dau ', '2016-05-11 00:13:22', NULL),
@@ -147,7 +149,10 @@ INSERT INTO `comments` (`id`, `comment_product`, `comment_user`, `comment_guest`
 (103, 38, 215, '', '', 'Cho minh thu cai nhe', '2016-05-17 05:08:42', NULL),
 (104, 38, 215, '', '', 'duoc chua ba con', '2016-05-17 05:09:17', NULL),
 (105, 38, 215, '', '', 'duoc roi nhe anh', '2016-05-17 05:09:27', 104),
-(106, 38, 215, '', '', 'sdsadasdasdasd', '2016-05-17 05:25:09', 104);
+(106, 38, 215, '', '', 'sdsadasdasdasd', '2016-05-17 05:25:09', 104),
+(107, 66, 1, 'Tran Van Nam', '', 'San pham nay tot khong anh?', '2016-06-05 14:27:59', NULL),
+(108, 66, 1, 'Tran Van Nam', '', 'San pham nay dung duoc em a', '2016-06-05 14:28:39', 107),
+(109, 38, 1, 'Tran Van Nam', '', 'Test cai nay phat nhe', '2016-06-05 14:49:53', NULL);
 
 -- --------------------------------------------------------
 
@@ -364,12 +369,12 @@ CREATE TABLE `gift_product` (
 
 INSERT INTO `gift_product` (`gift_id`, `product_id`) VALUES
 (20, 37),
-(20, 38),
-(20, 39),
-(20, 40),
 (21, 37),
+(20, 38),
 (21, 38),
+(20, 39),
 (21, 39),
+(20, 40),
 (21, 40),
 (21, 49);
 
@@ -801,7 +806,7 @@ ALTER TABLE `vendors`
 -- AUTO_INCREMENT for table `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `cates`
 --
@@ -811,7 +816,7 @@ ALTER TABLE `cates`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 --
 -- AUTO_INCREMENT for table `gifts`
 --

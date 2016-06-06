@@ -152,11 +152,42 @@ class Product_controller extends MY_Controller
             ]
             );
 
+		$similars = $this->product_model->do_get(
+			"product_price >=
+			(
+			SELECT product_price
+			FROM products
+			WHERE product_price <= $product[product_price]
+			ORDER BY product_price
+			DESC LIMIT 2,1
+			)
+			OR product_price <=
+			(
+			SELECT product_price
+			FROM products
+			WHERE product_price >= $product[product_price]
+			ORDER BY product_price
+			ASC LIMIT 2,1
+			)
+			AND product_cate = $product[product_cate]
+			AND products.id != $product[id]"
+			,
+			[
+				['join_table' => 'vendors', 'join_cond' => 'products.product_vendor=vendors.id'],
+				['join_table' => 'cates', 'join_cond' => 'products.product_cate=cates.id']
+			],
+			['cate_slug','product_slug','vendor_slug','products.id','product_name','product_img','product_vendor','product_cate','product_price'],
+			1, 4
+		);
+
         // Merge detail to product
         $result = array_merge($product, ['details' => $details]);
 
         // Merge gift to product
         $result = array_merge($result, ['gifts' => $gifts]);
+
+        // Merge similar to product
+        $result = array_merge($result, ['similars' => $similars]);
 
         $data['title'] = $product['product_name'];
 
@@ -167,15 +198,12 @@ class Product_controller extends MY_Controller
         $data['cateicon'] = $this->cate_model->do_get($product['product_cate'])[0]['cate_icon'];
         $data['vendorname'] = $this->vendor_model->do_get($product['product_vendor'])[0]['vendor_name'];
 
-        $data['product'] = $result;
-        $data['page'] = 'products/view_product';
-
-
-
         $customjs = "product_id = " . $product['id'] . ";";
         $data['customjs'] = $customjs;
         $data['my_js'] = 'products/main.js';
 
+		$data['product'] = $result;
+		$data['page'] = 'products/view_product';
 
         $this->load->myview('layout', $data);
     }
@@ -436,8 +464,8 @@ class Product_controller extends MY_Controller
                     ['join_table' => 'vendors', 'join_cond' => 'products.product_vendor=vendors.id'],
                     ['join_table' => 'cates', 'join_cond' => 'products.product_cate=cates.id']
                 ],
-                ['cate_name,cate_slug,vendor_slug,products.id,product_name,product_slug,product_price,product_img'],
-                ['product_date', 'DESC'],
+                ['cate_name,cate_slug,vendor_slug,products.id,product_name,product_slug,product_price,product_img','product_cate'],
+                ['product_cate', 'DESC'],
                 5
             );
         }

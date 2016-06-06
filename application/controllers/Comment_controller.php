@@ -29,11 +29,11 @@ class Comment_Controller extends MY_Controller
 
         if ($this->input->post()) {
 
-            $recaptcha = new \ReCaptcha\ReCaptcha("6LcXSR8TAAAAAPuIXyHVLILWdivkqOwB0T_EkT9w");
+            $recaptcha = new \ReCaptcha\ReCaptcha($this->config->item('recaptcha_secret_key'));
 
             $resp = $recaptcha->verify($this->input->post('g-recaptcha-response'));
 
-            if (!$resp->isSuccess()) {
+            if ($resp->isSuccess()) {
 
                 if ($this->form_validation->run('comment/create') === TRUE) {
 

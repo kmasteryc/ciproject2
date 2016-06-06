@@ -83,9 +83,8 @@
 
 			<div class="row">
 				<label class="col-md-3 control-label"></label>
-
 				<div class="col-md-6" id="recaptcha_box">
-					<div class="g-recaptcha" data-sitekey="6LcXSR8TAAAAAC7eL2x08seAtNIAM0fwZG_WB0NV"
+					<div class="g-recaptcha" data-sitekey="<?=$this->config->item('recaptcha_site_key')?>"
 						 style="transform:scale(0.8);-webkit-transform:scale(0.8);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
 				</div>
 			</div>

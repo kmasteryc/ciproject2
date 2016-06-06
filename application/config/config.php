@@ -24,8 +24,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['template'] = 'default/';
-$config['base_url'] = 'http://localhost/ciproject2/';
-$config['base_url'] = 'http://192.168.2.144/ciproject2/';
+$config['base_url'] = 'http://ciproject2.app/';
+$config['recaptcha_secret_key'] = '6LdLzyETAAAAABEG58nKm8EJZ1kJK71pWQqgTL8v';
+$config['recaptcha_site_key'] = '6LdLzyETAAAAALZPrgupR3FHH53jCtVfJkYZusPY';
+//$config['base_url'] = 'http://192.168.2.144/ciproject2/';
 $config['enable_profiler'] = TRUE;
 
 /*
