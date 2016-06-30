@@ -126,7 +126,7 @@ class Product_controller extends MY_Controller
     {
         $this->load->model(['detail_model', 'spec_model', 'cate_model', 'vendor_model', 'gift_product_model']);
 
-        $product = $this->product_model->do_get(['product_slug' => $productslug])[0];
+        $product = $this->product_model->do_get(['product_slug' => $productslug]);
 
         $details = $this->detail_model->do_get(
             [
@@ -194,9 +194,9 @@ class Product_controller extends MY_Controller
         $data['cateslug'] = $cateslug;
         $data['vendorslug'] = $vendorslug;
 
-        $data['catename'] = $this->cate_model->do_get($product['product_cate'])[0]['cate_name'];
-        $data['cateicon'] = $this->cate_model->do_get($product['product_cate'])[0]['cate_icon'];
-        $data['vendorname'] = $this->vendor_model->do_get($product['product_vendor'])[0]['vendor_name'];
+        $data['catename'] = $this->cate_model->do_get($product['product_cate'])['cate_name'];
+        $data['cateicon'] = $this->cate_model->do_get($product['product_cate'])['cate_icon'];
+        $data['vendorname'] = $this->vendor_model->do_get($product['product_vendor'])['vendor_name'];
 
         $customjs = "product_id = " . $product['id'] . ";";
         $data['customjs'] = $customjs;

@@ -1,54 +1,222 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-            <h5 style="text-align: center"><b>What do you want to see through?</b></h5>
-        </div>
-    </div>
-    <div class="row welcome_text">
-        <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-            <?php
-            foreach ($cates as $cate):
-                ?>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                    <a href="<?= base_url('product/' . $cate['cate_slug']) ?>">
-                        <div class="big_icon">
-                            <i class="fa <?= $cate['cate_icon'] ?> fa-3x"></i>
-                            <h5><?= $cate['cate_name'] ?></h5>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="home-hot">
+        <h4>HOT SMARTPHONE</h4>
+        <ul class="mySlider">
+            <?php foreach ($products as $product): ?>
+                <a href="<?= base_url("product/$cateslug/$product[vendor_slug]/$product[product_slug]") ?>">
+                    <li>
+                        <div class="product_box">
+
+                            <div class="product_img_box">
+
+                                <?php
+                                if ($product['product_discount'] != 0) {
+                                    $percent = round($product['product_discount'] * 100 / $product['product_price']);
+                                    echo "<span class='badge discount_top'><i class='fa fa-gift'></i> $percent %</span>";
+                                }
+
+                                ?>
+
+                                <figure class="product_img">
+
+                                    <img
+                                        src="<?= base_url("public/images/products/$product[id]/thumbs/$product[product_img]") ?>">
+
+                                </figure>
+
+                                <div class="product_summary hidden-xs hidden-sm">
+
+                                    <?php
+                                    foreach ($product['details'] as $detail) {
+                                        echo "<span> <b>$detail[spec_name]</b>: $detail[detail_value] $detail[spec_unit]</span>";
+                                    }
+                                    ?>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="product_below_img">
+
+                                <b><?= $product['product_name'] ?></b>
+
+                                <p style="color:red">
+                                    <b>
+                                        <?php
+                                        if ($product['product_discount'] != 0) {
+                                            echo "<span style='color:silver; text-decoration: line-through'>" . vnd($product['product_price']) . "</span><br />";
+                                            echo vnd($product['product_price'] - $product['product_discount']);
+                                        } else {
+                                            echo vnd($product['product_price'], 0, ',', '.');
+                                        }
+                                        ?>
+                                    </b>
+                                </p>
+
+                            </div>
+                            <button type="button" class="btn btn-labeled btn-success btn_add_item custom_btn1"
+                                    data-product-id="<?= $product['id'] ?>"
+                                    data-product-name="<?= $product['product_name'] ?>"
+                                    data-product-price="<?= $product['product_price'] ?>">
+
+                                <span class="btn-label"><i class="fa fa-shopping-bag"></i></span>Buy
+
+                            </button>
+
+
                         </div>
-                    </a>
-                </div>
-                <?php
-            endforeach;
-            ?>
-        </div>
+                    </li>
+                </a>
+            <?php endforeach; ?>
+        </ul>
     </div>
-    <div class="row">
-        <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-            <h4>My project is include these features and technologies</h4>
-            <ul class="list-group">
-                <li class="list-group-item list-group-item-success">Basic CRUD Category, Vendor, Product,..</li>
-                <li class="list-group-item list-group-item-success">Full responsive front-end and back-end</li>
-                <li class="list-group-item list-group-item-success">Process invoice: requesting, validating, shipping
-                    and done
-                </li>
-                <li class="list-group-item list-group-item-success">Custom specifications for different product type
-                </li>
-                <li class="list-group-item list-group-item-success">Products with slides and review article</li>
-                <li class="list-group-item list-group-item-success">Full search modules</li>
-                <li class="list-group-item list-group-item-success">Comment with reply feature</li>
-                <li class="list-group-item list-group-item-success">AJAX used frequently in</li>
-            </ul>
-        </div>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="home-hot">
+        <h4>HOT TABLET</h4>
+        <ul class="mySlider">
+            <?php foreach ($products as $product): ?>
+                <a href="<?= base_url("product/$cateslug/$product[vendor_slug]/$product[product_slug]") ?>">
+                    <li>
+                        <div class="product_box">
+
+                            <div class="product_img_box">
+
+                                <?php
+                                if ($product['product_discount'] != 0) {
+                                    $percent = round($product['product_discount'] * 100 / $product['product_price']);
+                                    echo "<span class='badge discount_top'><i class='fa fa-gift'></i> $percent %</span>";
+                                }
+
+                                ?>
+
+                                <figure class="product_img">
+
+                                    <img
+                                        src="<?= base_url("public/images/products/$product[id]/thumbs/$product[product_img]") ?>">
+
+                                </figure>
+
+                                <div class="product_summary hidden-xs hidden-sm">
+
+                                    <?php
+                                    foreach ($product['details'] as $detail) {
+                                        echo "<span> <b>$detail[spec_name]</b>: $detail[detail_value] $detail[spec_unit]</span>";
+                                    }
+                                    ?>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="product_below_img">
+
+                                <b><?= $product['product_name'] ?></b>
+
+                                <p style="color:red">
+                                    <b>
+                                        <?php
+                                        if ($product['product_discount'] != 0) {
+                                            echo "<span style='color:silver; text-decoration: line-through'>" . vnd($product['product_price']) . "</span><br />";
+                                            echo vnd($product['product_price'] - $product['product_discount']);
+                                        } else {
+                                            echo vnd($product['product_price'], 0, ',', '.');
+                                        }
+                                        ?>
+                                    </b>
+                                </p>
+
+                            </div>
+                            <button type="button" class="btn btn-labeled btn-success btn_add_item custom_btn1"
+                                    data-product-id="<?= $product['id'] ?>"
+                                    data-product-name="<?= $product['product_name'] ?>"
+                                    data-product-price="<?= $product['product_price'] ?>">
+
+                                <span class="btn-label"><i class="fa fa-shopping-bag"></i></span>Buy
+
+                            </button>
+
+
+                        </div>
+                    </li>
+                </a>
+            <?php endforeach; ?>
+        </ul>
     </div>
-    <div class="row">
-        <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-            <h4>Incomplete features. I'll do soon</h4>
-            <ul class="list-group">
-                <li class="list-group-item list-group-item-danger">Set permission for seller</li>
-                <li class="list-group-item list-group-item-danger">Chat confirmation before public</li>
-                <li class="list-group-item list-group-item-danger">Collect statistic infomation</li>
-                <li class="list-group-item list-group-item-danger">Make code smarter</li>
-            </ul>
-        </div>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="home-hot">
+        <h4>HOT LAPTOP</h4>
+        <ul class="mySlider">
+            <?php foreach ($products as $product): ?>
+                <a href="<?= base_url("product/$cateslug/$product[vendor_slug]/$product[product_slug]") ?>">
+                    <li>
+                        <div class="product_box">
+
+                            <div class="product_img_box">
+
+                                <?php
+                                if ($product['product_discount'] != 0) {
+                                    $percent = round($product['product_discount'] * 100 / $product['product_price']);
+                                    echo "<span class='badge discount_top'><i class='fa fa-gift'></i> $percent %</span>";
+                                }
+
+                                ?>
+
+                                <figure class="product_img">
+
+                                    <img
+                                        src="<?= base_url("public/images/products/$product[id]/thumbs/$product[product_img]") ?>">
+
+                                </figure>
+
+                                <div class="product_summary hidden-xs hidden-sm">
+
+                                    <?php
+                                    foreach ($product['details'] as $detail) {
+                                        echo "<span> <b>$detail[spec_name]</b>: $detail[detail_value] $detail[spec_unit]</span>";
+                                    }
+                                    ?>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="product_below_img">
+
+                                <b><?= $product['product_name'] ?></b>
+
+                                <p style="color:red">
+                                    <b>
+                                        <?php
+                                        if ($product['product_discount'] != 0) {
+                                            echo "<span style='color:silver; text-decoration: line-through'>" . vnd($product['product_price']) . "</span><br />";
+                                            echo vnd($product['product_price'] - $product['product_discount']);
+                                        } else {
+                                            echo vnd($product['product_price'], 0, ',', '.');
+                                        }
+                                        ?>
+                                    </b>
+                                </p>
+
+                            </div>
+                            <button type="button" class="btn btn-labeled btn-success btn_add_item custom_btn1"
+                                    data-product-id="<?= $product['id'] ?>"
+                                    data-product-name="<?= $product['product_name'] ?>"
+                                    data-product-price="<?= $product['product_price'] ?>">
+
+                                <span class="btn-label"><i class="fa fa-shopping-bag"></i></span>Buy
+
+                            </button>
+
+
+                        </div>
+                    </li>
+                </a>
+            <?php endforeach; ?>
+        </ul>
     </div>
 </div>

@@ -53,7 +53,11 @@ class MY_Model extends CI_Model
             $query = $this->db->limit($limit,$start);
         }
         $query = $this->db->get($this->_table);
-        return $query->result_array();
+        $result = $query->result_array();
+        if (count($result) == 1){
+            return $result[0];
+        }
+        return $result;
     }
    public function do_get_2($condition = '', $joins='',$select = '', $order = '', $limit = '', $start = '')
     {
