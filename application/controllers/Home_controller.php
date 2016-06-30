@@ -9,45 +9,59 @@ class Home_controller extends MY_Controller{
     public function __construct(){
         parent::__construct('cate_model');
     }
-    public function index($cate=14){
-        $this->load->model(['detail_model','spec_model','vendor_model']);
+    public function index(){
+        $this->load->model(['detail_model','spec_model','vendor_model','report_model','product_model']);
 
-        $products = $this->cate_model->do_get(
-            ['cates.id' => $cate],
-            [
-                ['join_table' => 'products', 'join_cond' => 'products.product_cate=cates.id'],
-                ['join_table' => 'vendors', 'join_cond' => 'products.product_vendor=vendors.id']
-            ],
-            ['cate_name,vendor_slug,products.id,product_name,product_slug,product_price,product_img,product_discount']
-        );
+        $toplastweek = $this->report_model->getlastweekreport();
 
-        if ($products) {
-            foreach ($products as $product) {
-                $details = $this->detail_model->do_get(
+        foreach ($toplastweek as $cate=>$items) {
+            $cate_get = $this->cate_model->do_get($cate);
+            $toplastweek[$cate_get['cate_name']] = $toplastweek[$cate];
+            unset($toplastweek[$cate]);
+//            $products = $this->cate_model->do_get(
+//                ['cates.id' => $cate],
+//                [
+//                    ['join_table' => 'products', 'join_cond' => 'products.product_cate=cates.id'],
+//                    ['join_table' => 'vendors', 'join_cond' => 'products.product_vendor=vendors.id']
+//                ],
+//                ['cate_name,vendor_slug,products.id,product_name,product_slug,product_price,product_img,product_discount']
+//            );
+            foreach ($items as $product_id => $product_sold){
+                $product = $this->product_model->do_get(['products.id'=>$product_id],
                     [
-                        'detail_product' => $product['id']
+                        ['join_table' => 'cates', 'join_cond' => 'products.product_cate=cates.id'],
+                        ['join_table' => 'vendors', 'join_cond' => 'products.product_vendor=vendors.id']
                     ],
-                    [
-                        [
-                            'join_table' => 'specs',
-                            'join_cond' => 'details.detail_spec=specs.id'
-                        ]
-                    ],
-                    ['spec_name,spec_unit,detail_value'],
-                    0,
-                    7
+                    ['products.id','product_slug','product_price','product_img','product_discount','product_name','cate_slug','vendor_slug']
                 );
-                $result[] = array_merge($product, ['details' => $details]);
+
+                if ($product) {
+                    $details = $this->detail_model->do_get(
+                        [
+                            'detail_product' => $product_id
+                        ],
+                        [
+                            [
+                                'join_table' => 'specs',
+                                'join_cond' => 'details.detail_spec=specs.id'
+                            ]
+                        ],
+                        ['spec_name,spec_unit,detail_value'],
+                        0,
+                        7
+                    );
+                    $toplastweek[$cate_get['cate_name']][$product_id] = array_merge($product, ['details' => $details]);
+                }
             }
-
-
-
-            $data['cateslug'] = $cate;
-            $data['catename'] = $products[0]['cate_name'];
-            $data['products'] = $result;
-            $data['vendors'] = $this->vendor_model->do_get('', '', ['vendor_name', 'id']);
-            $data['specs'] = $this->spec_model->do_get();
         }
+
+//        echo "<pre>";
+//        print_r($toplastweek);
+//        echo "</pre>";
+//        exit;
+        $data['products'] = $toplastweek;
+        $data['vendors'] = $this->vendor_model->do_get('', '', ['vendor_name', 'id']);
+        $data['specs'] = $this->spec_model->do_get();
 
         $data['title'] = 'Trust - Fast - Reliable';
         $data['page'] = 'homes/index';

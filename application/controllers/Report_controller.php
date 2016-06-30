@@ -18,19 +18,20 @@ class Report_controller extends MY_Controller
         echo 'Welcome to report controller!';
     }
 
-    public function getLastWeekReport()
+    public function getLastWeekReport($cate)
     {
         $car = \Carbon\Carbon::parse('last monday');
         $last_week_days[] = $car->toDateString();
         for ($i = 1; $i <= 6; $i++) {
             $last_week_days[] = $car->subday(1)->toDateString();
         }
-        
+
         $that_days_report = [];
         foreach ($last_week_days as $day) {
             $this_day = $this->report_model->do_get(
                 [
-                    'report_date' => $day
+                    'report_date' => $day,
+                    'report_cate' => $cate
                 ]);
             if (count($this_day) > 0) {
                 $that_days_report[$day] = json_decode($this_day['report_content']);
@@ -42,9 +43,8 @@ class Report_controller extends MY_Controller
         arsort($res['summary']);
 
         header('Content-type: application/json');
-
         // Swap key and value to prevent auto sorting JSON in chrome, opera browser
-        echo json_encode($this->_swapArray($res['summary']));
+        echo json_encode($res['summary']);
     }
 
     public function getLastMonthReport()
@@ -91,7 +91,7 @@ class Report_controller extends MY_Controller
 
     public function getCurrentMonthReport()
     {
-         $car = \Carbon\Carbon::now()->startOfMonth();
+        $car = \Carbon\Carbon::now()->startOfMonth();
 
         // Count days in that month
         $day_in_month = $car->daysInMonth;
@@ -144,12 +144,11 @@ class Report_controller extends MY_Controller
 
     public function test()
     {
-        // Get last day of last month
-        $car = \Carbon\Carbon::now()->startOfMonth()->subDay()->toDateString();
-
+        var_dump($this->report_model->getLastWeekReport());
     }
 
-    private function _processReport($report_all_days){
+    private function _processReport($report_all_days)
+    {
         $total = '';
         $summary = [];
         foreach ($report_all_days as $report_day) {
@@ -167,15 +166,14 @@ class Report_controller extends MY_Controller
         }
         return [
             'total' => $total,
-            'summary'=>$summary
+            'summary' => $summary
         ];
     }
 
     private function _swapArray($arr)
     {
         $new_arr = '';
-        foreach ($arr as $k=>$vl)
-        {
+        foreach ($arr as $k => $vl) {
             $new_arr[$vl] = $k;
 
         }
