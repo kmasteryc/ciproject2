@@ -5,6 +5,7 @@ class Bill_Controller extends MY_Controller
     public function __construct()
     {
         parent::__construct('bill_model');
+        $this->load->model('report_model');
     }
 
     public function ajax_delete()
@@ -17,7 +18,7 @@ class Bill_Controller extends MY_Controller
     public function next($id)
     {
         $this->auth->check(TRUE, 2, 3);
-        $bill = $this->bill_model->do_get($id)[0];
+        $bill = $this->bill_model->do_get($id);
         if ($bill) {
             // Find commiter
             $commiter = $this->auth->whoareyou('id');
@@ -25,6 +26,8 @@ class Bill_Controller extends MY_Controller
             $step = 0;
             $done = 0;
             $cur_states = $new_states = json_decode($bill['bill_state'],TRUE);
+//            var_dump($cur_states);
+//            exit();
             foreach ($cur_states as $k => $cur_state) {
                 if ($cur_state != 0) {
                     $step++;
@@ -38,6 +41,14 @@ class Bill_Controller extends MY_Controller
                     // Done step is here
                     if ($step == 3){
                         $done = 1;
+
+                        // Update to report
+                        $products = json_decode($bill['bill_products'], true);
+                        foreach ($products as $product)
+                        {
+                            $total = $product['product_quantity'] * $product['product_price'];
+                            $this->report_model->addToReport($product['product_id'], $product['product_quantity'], $total);
+                        }
                     }
 
                     break;
@@ -54,7 +65,6 @@ class Bill_Controller extends MY_Controller
 
     public function show($start = 0)
     {
-
         $this->auth->check(TRUE, 2, 3);
 
         $data['title'] = 'List all bills :D';
@@ -74,7 +84,7 @@ class Bill_Controller extends MY_Controller
             $template = 'layout';
         }
 
-        $data['bill'] = $this->bill_model->do_get($id)[0];
+        $data['bill'] = $this->bill_model->do_get($id);
         $data['title'] = 'Invoice #' . $data['bill']['id'];
         $data['page'] = 'bills/detail';
         $data['my_js'] = 'bills/detail.js';

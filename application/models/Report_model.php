@@ -1,16 +1,20 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: kmasteryc
  * Date: 6/29/16
  * Time: 10:12 PM
  */
-class Report_model extends MY_Model{
+class Report_model extends MY_Model
+{
     public function __construct()
     {
         parent::__construct('reports');
         $this->load->model('cate_model');
+        $this->load->model('product_model');
     }
+
     public function getLastWeekReport()
     {
         $cates = $this->cate_model->do_get();
@@ -44,6 +48,70 @@ class Report_model extends MY_Model{
         }
         return $cate_report;
     }
+
+    public function addToReport($product_id, $product_sold)
+    {
+        // Resolve product cate
+        $cate = $this->product_model->do_get(
+            [
+                'products.id'=>$product_id
+            ],
+            [[
+                'join_table' => 'cates',
+                'join_cond' => 'cates.id = products.product_cate'
+            ]],
+            ['cates.id']);
+
+        $cur = $this->report_model->do_get([
+            'report_date' => date('Y-m-d'),
+            'report_cate' => $cate['id']
+        ]);
+
+        // If doesnt have report for that cate in that day
+        if (!$cur) {
+            $content = json_encode([[
+                'product_id' => $product_id,
+                'product_sold' => $product_sold
+            ]]);
+            $insert = [
+                'report_cate' => $cate['id'],
+                'report_date' => date('Y-m-d'),
+                'report_content' => $content
+            ];
+            $this->report_model->do_insert($insert);
+        } else { // Else update it!
+            $contents = json_decode($cur['report_content']);
+            // Varible to check if need to add new product to report_content
+            $needtoadd = true;
+            foreach ($contents as $k=>$content)
+            {
+                // If product exists
+                if ($content->product_id == $product_id)
+                {
+                    $needtoadd = false;
+                    $contents[$k]->product_sold += $product_sold;
+                }
+            }
+            // If no product. Create it now
+            if ($needtoadd === true)
+            {
+                $contents[] = [
+                    'product_id' => $product_id,
+                    'product_sold' => $product_sold
+                ];
+            }
+            $cond = [
+                'report_date' => $cur['report_date'],
+                'report_cate' => $cate['id'],
+            ];
+            $this->report_model->do_update($cond, [
+                'report_content' => json_encode($contents)
+            ]);
+        }
+
+//        var_dump($cur);
+    }
+
     private function _processReport($report_all_days)
     {
         $total = '';

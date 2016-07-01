@@ -94,7 +94,7 @@
                                         echo "<td>$state[state_time]</td>";
                                         echo "<td>";
                                         if (is_numeric($state['state_commiter'])) {
-                                            echo $this->user_model->do_get($state['state_commiter'])[0]['user_name'];
+                                            echo $this->user_model->do_get($state['state_commiter'])['user_name'];
                                         } else {
                                             echo $bill['bill_name'];
                                         }
@@ -132,6 +132,7 @@
                                 <?php
                                 $i = 1;
                                 $products = json_decode($bill['bill_products'], TRUE);
+//                                var_dump($products);exit();
                                 foreach ($products as $product):
                                     echo "<tr>";
                                     echo "<td># $i</td>";
