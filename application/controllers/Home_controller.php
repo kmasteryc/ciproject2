@@ -15,7 +15,7 @@ class Home_controller extends MY_Controller{
         $toplastweek = $this->report_model->getlastweekreport();
 
         foreach ($toplastweek as $cate=>$items) {
-            $cate_get = $this->cate_model->do_get($cate);
+            $cate_get = $this->cate_model->do_get($cate)[0];
             $toplastweek[$cate_get['cate_name']] = $toplastweek[$cate];
             unset($toplastweek[$cate]);
 //            $products = $this->cate_model->do_get(
@@ -33,7 +33,7 @@ class Home_controller extends MY_Controller{
                         ['join_table' => 'vendors', 'join_cond' => 'products.product_vendor=vendors.id']
                     ],
                     ['products.id','product_slug','product_price','product_img','product_discount','product_name','cate_slug','vendor_slug']
-                );
+                )[0];
 
                 if ($product) {
                     $details = $this->detail_model->do_get(
@@ -55,28 +55,19 @@ class Home_controller extends MY_Controller{
             }
         }
 
-//        echo "<pre>";
-//        print_r($toplastweek);
-//        echo "</pre>";
-//        exit;
         $data['products'] = $toplastweek;
-        $data['vendors'] = $this->vendor_model->do_get('', '', ['vendor_name', 'id']);
+        $data['vendors'] = $this->vendor_model->do_get('',[
+            [
+                'join_table' => 'cates',
+                'join_cond' => 'cates.id=vendors.vendor_cate'
+            ],
+        ]);
         $data['specs'] = $this->spec_model->do_get();
 
-        $data['title'] = 'Trust - Fast - Reliable';
+        $data['title'] = my_config('slogan');
         $data['page'] = 'homes/index';
-        $data['my_js'] = 'homes/index.js';
-        $data['cates'] = $this->cate_model->do_get();
-
-        $this->load->myview('layout', $data);
-    }
-    public function landing(){
-        $data['title'] = 'Trust - Fast - Reliable';
-        $data['page'] = 'homes/landing';
-        $data['my_js'] = 'products/main.js';
-        $data['is_welcome'] = true;
-
-        $data['cates'] = $this->cate_model->do_get();
+        $data['my_js'] = ['homes/index.js','products/main.js'];
+        $data['cates'] = $this->cate_model->do_get()[0];
 
         $this->load->myview('layout', $data);
     }

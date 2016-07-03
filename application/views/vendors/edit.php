@@ -1,5 +1,5 @@
 <?php
-echo form_open('', array('class' => 'form-horizontal', 'method' => 'POST'));
+echo form_open_multipart('', array('class' => 'form-horizontal', 'method' => 'POST'));
 ?>
     <div class="panel panel-primary">
         <div class="panel-heading">
@@ -35,6 +35,26 @@ echo form_open('', array('class' => 'form-horizontal', 'method' => 'POST'));
 
                 </div>
             </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Upload new image
+                </label>
+
+                <div class="col-sm-4">
+                    <input type="file" class="form-control" name="userfile" size="20"/>
+                    <span class="help-block"><?= form_error("userfile"); ?></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Old image
+                </label>
+
+                <div class="col-sm-4">
+                    <img src="<?= base_url("public/images/vendors/$vendor[vendor_img]") ?>">
+                </div>
+            </div>
+
             <input type="hidden" name="txtvendor_old" value="<?php echo $vendor['vendor_name']; ?>">
 
             <label for="inputEmail3" class="col-sm-2 control-label"></label>

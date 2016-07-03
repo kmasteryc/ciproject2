@@ -36,7 +36,7 @@ class Report_model extends MY_Model
                         'report_cate' => $cate['id']
                     ]);
                 if (count($this_day) > 0) {
-                    $that_days_report[$day] = json_decode($this_day['report_content']);
+                    $that_days_report[$day] = json_decode($this_day[0]['report_content']);
                 };
             }
 

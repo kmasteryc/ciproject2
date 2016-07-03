@@ -7,7 +7,7 @@ if (!isset($is_welcome)) {
     <div class="row">
             <hr>
             <div class="" style="text-align: center">
-                Fast, Trust and Reliable hi-tech store
+                <?=my_config('slogan')?>
             </div>
         </div>
     </div>

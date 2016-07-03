@@ -11,6 +11,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Action</th>
+                    <th>Vendor img</th>
                     <th>Vendor name</th>
                     <th>Products</th>
                     <th>Category</th>
@@ -28,6 +29,7 @@
                             <a href='' class='vendor_lnk_del'
                                id='<?php echo $vendor['id'] ?>'>Delete</a>
                         </td>
+                        <td><img src="<?= base_url("public/images/vendors/$vendor[vendor_img]") ?>"></td>
                         <td><?php echo $vendor['vendor_name']; ?></td>
                         <td><?php echo count($vendor['vendor_products']); ?></td>
                         <td><?php echo $this->misc_model->summon_name('cates', $vendor['vendor_cate'], 'cate_name'); ?></td>

@@ -1,5 +1,5 @@
 <?php
-echo form_open(base_url('vendor/create'), array('class' => 'form-horizontal', 'method' => 'POST'));
+echo form_open_multipart(base_url('vendor/create'), array('class' => 'form-horizontal', 'method' => 'POST'));
 ?>
     <div class="panel panel-primary">
         <div class="panel-heading">
@@ -14,9 +14,11 @@ echo form_open(base_url('vendor/create'), array('class' => 'form-horizontal', 'm
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="inputEmail3" name='txtvendor'
                            value="<?php echo set_value('txtvendor'); ?>" id="txtvendor" placeholder="Vendor name">
-                    <span id="helpBlock2" class="help-block"><?= form_error("txtvendor"); ?></span>
+                    <span  class="help-block"><?= form_error("txtvendor"); ?></span>
                 </div>
             </div>
+
+
             <div class="form-group">
                 <label for="inputPassword3" class="col-sm-2 control-label">Category</label>
 
@@ -28,9 +30,19 @@ echo form_open(base_url('vendor/create'), array('class' => 'form-horizontal', 'm
                         endforeach;
                         ?>
                     </select>
-                    <span id="helpBlock2" class="help-block"><?= form_error("intcate"); ?></span>
+                    <span class="help-block"><?= form_error("intcate"); ?></span>
                 </div>
             </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Image</label>
+
+                <div class="col-sm-4">
+                    <input type="file" class="form-control" name="userfile" size="20"/>
+                    <span class="help-block"><?= form_error("userfile"); ?></span>
+                </div>
+            </div>
+
             </p>
         </div>
         <div class="panel-footer">

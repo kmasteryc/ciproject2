@@ -1,6 +1,7 @@
 <html>
 <head>
     <title><?php echo $title; ?></title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="<?php echo site_url("public/css/bootstrap.min.css"); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo site_url("public/css/bootstrap_flat.css"); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo site_url("public/css/jquery-ui.min.css"); ?>">
@@ -23,7 +24,13 @@
     <script type="text/javascript" src="<?= site_url("public/js/effect.js"); ?>"></script>
     <?php
     if (isset($my_js)){
-        echo '<script type="text/javascript" src="'.site_url("public/js/$my_js").'"></script>';
+        if (!is_array($my_js)) {
+            $my_js = [0=>$my_js];
+        }
+        foreach ($my_js as $js)
+        {
+            echo '<script type="text/javascript" src="'.site_url("public/js/$js").'"></script>';
+        }
     }
     if (isset($customjs)){
         echo '<script>'.$customjs.'</script>';

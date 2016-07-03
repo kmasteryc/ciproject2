@@ -3,11 +3,23 @@ if ($products) {
 ?>
 <div class="row">
     <ol class="breadcrumb">
-
-
         <li class="active"><?= $catename ?></li>
-
     </ol>
+</div>
+<div class="row">
+    <div id="brand-logos">
+        <ul class="mySlider">
+            <?php foreach ($vendors as $vendor): ?>
+                <li>
+                    <a href="<?= base_url("product/$cateslug/$vendor[vendor_slug]")?>">
+                    <img src="<?= base_url("public/images/vendors/$vendor[vendor_img]") ?>">
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<div class="row">
 
     <div class="col-md-2" xmlns="http://www.w3.org/1999/html">
 
@@ -74,15 +86,14 @@ if ($products) {
                         </p>
 
                     </div>
-                        <button type="button" class="btn btn-labeled btn-success btn_add_item custom_btn1"
-                                data-product-id="<?= $product['id'] ?>"
-                                data-product-name="<?= $product['product_name'] ?>"
-                                data-product-price="<?= $product['product_price'] ?>">
+                    <button type="button" class="btn btn-labeled btn-success btn_add_item custom_btn1"
+                            data-product-id="<?= $product['id'] ?>"
+                            data-product-name="<?= $product['product_name'] ?>"
+                            data-product-price="<?= $product['product_price'] ?>">
 
-                            <span class="btn-label"><i class="fa fa-shopping-bag"></i></span>Buy
+                        <span class="btn-label"><i class="fa fa-shopping-bag"></i></span>Buy
 
-                        </button>
-
+                    </button>
 
 
                 </div>

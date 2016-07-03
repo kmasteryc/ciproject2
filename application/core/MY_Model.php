@@ -54,38 +54,41 @@ class MY_Model extends CI_Model
         }
         $query = $this->db->get($this->_table);
         $result = $query->result_array();
-        if (count($result) == 1){
-            return $result[0];
-        }
+//        if (count($result) == 1){
+//            return $result[0];
+//        }
         return $result;
     }
-   public function do_get_2($condition = '', $joins='',$select = '', $order = '', $limit = '', $start = '')
-    {
-        if ($condition != '') {
-            if (is_numeric($condition)) {
-                $this->db->where('id', $condition);
-            } else {
-                $this->db->where($condition);
-            }
-        }
-        if ($select != '') {
-            $select = implode(',', $select);
-            $this->db->select($select);
-        }
-        if ($order != '') {
-            $this->db->order_by($order[0], $order[1]);
-        }
-        if ($joins!= ''){
-            foreach($joins as $join) {
-                $this->db->join($join['join_table'], $join['join_cond']);
-            }
-        }
-        if ($limit){
-            $query = $this->db->limit($limit,$start);
-        }
-        $query = $this->db->get($this->_table);
-        return $query->result_array();
-    }
+
+
+
+//   public function do_get_2($condition = '', $joins='',$select = '', $order = '', $limit = '', $start = '')
+//    {
+//        if ($condition != '') {
+//            if (is_numeric($condition)) {
+//                $this->db->where('id', $condition);
+//            } else {
+//                $this->db->where($condition);
+//            }
+//        }
+//        if ($select != '') {
+//            $select = implode(',', $select);
+//            $this->db->select($select);
+//        }
+//        if ($order != '') {
+//            $this->db->order_by($order[0], $order[1]);
+//        }
+//        if ($joins!= ''){
+//            foreach($joins as $join) {
+//                $this->db->join($join['join_table'], $join['join_cond']);
+//            }
+//        }
+//        if ($limit){
+//            $query = $this->db->limit($limit,$start);
+//        }
+//        $query = $this->db->get($this->_table);
+//        return $query->result_array();
+//    }
 
     public function do_delete($id)
     {

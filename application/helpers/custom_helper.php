@@ -58,3 +58,10 @@ function to_array($str){
 function vnd($int){
     return number_format($int,0,',','.'). ' VND';
 }
+
+function my_config($config_name)
+{
+    $CI =& get_instance();
+    $CI->load->model('config_model');
+    return $CI->config_model->do_get(['config_name'=>$config_name])[0]['config_value'];
+}

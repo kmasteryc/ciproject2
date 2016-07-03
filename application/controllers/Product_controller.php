@@ -24,7 +24,7 @@ class Product_controller extends MY_Controller
                 ['join_table' => 'products', 'join_cond' => 'products.product_cate=cates.id'],
                 ['join_table' => 'vendors', 'join_cond' => 'products.product_vendor=vendors.id']
             ],
-            ['cate_name,vendor_slug,products.id,product_name,product_slug,product_price,product_img,product_discount']
+            ['cate_name,cates.id as cid,vendor_slug,products.id,product_name,product_slug,product_price,product_img,product_discount']
         );
 
         if ($products) {
@@ -50,15 +50,16 @@ class Product_controller extends MY_Controller
 
             $data['cateslug'] = $cate;
             $data['catename'] = $products[0]['cate_name'];
+            $data['cateid'] = $products[0]['cid'];
             $data['products'] = $result;
-            $data['vendors'] = $this->vendor_model->do_get('', '', ['vendor_name', 'id']);
+            $data['vendors'] = $this->vendor_model->do_get(['vendor_cate'=>$data['cateid']]);
             $data['specs'] = $this->spec_model->do_get();
         }else{
             $data['products'] = '';
         }
         $data['title'] = 'Trust - Fast - Reliable';
         $data['page'] = 'products/view_cate';
-        $data['my_js'] = 'products/main.js';
+        $data['my_js'] = ['products/main.js','products/view_cate.js'];
 
         $this->load->myview('layout', $data);
     }
@@ -126,7 +127,7 @@ class Product_controller extends MY_Controller
     {
         $this->load->model(['detail_model', 'spec_model', 'cate_model', 'vendor_model', 'gift_product_model']);
 
-        $product = $this->product_model->do_get(['product_slug' => $productslug]);
+        $product = $this->product_model->do_get(['product_slug' => $productslug])[0];
 
         $details = $this->detail_model->do_get(
             [
@@ -194,9 +195,9 @@ class Product_controller extends MY_Controller
         $data['cateslug'] = $cateslug;
         $data['vendorslug'] = $vendorslug;
 
-        $data['catename'] = $this->cate_model->do_get($product['product_cate'])['cate_name'];
-        $data['cateicon'] = $this->cate_model->do_get($product['product_cate'])['cate_icon'];
-        $data['vendorname'] = $this->vendor_model->do_get($product['product_vendor'])['vendor_name'];
+        $data['catename'] = $this->cate_model->do_get($product['product_cate'])[0]['cate_name'];
+        $data['cateicon'] = $this->cate_model->do_get($product['product_cate'])[0]['cate_icon'];
+        $data['vendorname'] = $this->vendor_model->do_get($product['product_vendor'])[0]['vendor_name'];
 
         $customjs = "product_id = " . $product['id'] . ";";
         $data['customjs'] = $customjs;
