@@ -13,16 +13,13 @@
                         <i class="fa fa-modx fa-2x"></i> Trust - Fast phone store
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4">
-                        <strong>Support : </strong>kmasteryc@gmail.com<br/>
-                        <strong>Call :</strong>+01-345-908-55-89<br/>
-                        <strong>Fax :</strong>+456-345-908-559<br/>
+                        <strong>Support : </strong><?= my_config('site_email') ?><br/>
+                        <strong>Call :</strong><?= my_config('sale_phone') ?><br/>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4">
-                        <strong>Bootstrap Technologies </strong>
+                        <strong><?= my_config('company') ?></strong>
                         <br/>
-                        Address : 234/90, Google Street
-                        <br/>
-                        United States.<br/>
+                        Address : <?=my_config('store_address')?>
                     </div>
 
                 </div>
@@ -35,6 +32,12 @@
                 </div>
                 <hr/>
 
+                <?php
+                $states = json_decode($bill['bill_state'], TRUE);
+
+                $complete_time = $states[4]['state_time'] ? $states[4]['state_time'] : 'In progress';
+                ?>
+
                 <div class="row ">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <h2>Client Details :</h2>
@@ -45,8 +48,8 @@
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <h2>Payment Details :</h2>
                         <h4><strong>Invoice No: </strong>#<?= $bill['id'] ?></h4>
-                        <h4>Invoice Date: 23rd Jan 2015</h4>
-                        <h4>Purchased On: 21st Jan 2015</h4>
+                        <h4>Purchased Date: <?=$states[1]['state_time']?></h4>
+                        <h4>Completed On: <?=$complete_time?></h4>
                         <h4><strong>Amount Paid : </strong><?= vnd($bill['bill_total']) ?> VND</h4>
                     </div>
                 </div>
@@ -69,7 +72,7 @@
                                 </thead>
                                 <tbody>
                                 <?php
-                                $states = json_decode($bill['bill_state'], TRUE);
+
 
                                 foreach ($states as $k => $state):
                                     echo "<tr>";
@@ -94,7 +97,7 @@
                                         echo "<td>$state[state_time]</td>";
                                         echo "<td>";
                                         if (is_numeric($state['state_commiter'])) {
-                                            echo $this->user_model->do_get($state['state_commiter'])['user_name'];
+                                            echo $this->user_model->do_get($state['state_commiter'])[0]['user_name'];
                                         } else {
                                             echo $bill['bill_name'];
                                         }
@@ -153,7 +156,7 @@
                 <hr/>
                 <div class="row">
                     <div class="col-lg-9 col-md-9 col-sm-9" style="text-align: right; padding-right: 30px;">
-                        Total Amount With 10% Taxes :
+                        Total Amount :
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3">
                         <strong><?= vnd($bill['bill_total']) ?></strong>

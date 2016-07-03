@@ -25,15 +25,10 @@ $this->load->model(['product_model', 'vendor_model', 'cate_model', 'user_model',
     </div>
 </div>
 <!-- /. NAV TOP  -->
-<!--<p class="hidden-md hidden-lg hidden-sm" style="text-align: right">-->
-<!--    <a href="#" id="show_menu_admin"><i class="fa fa-diamond fa-1x"></i> Show menu</a>-->
-<!--</p>-->
+
 <nav class="navbar-default navbar-side hidden-xs" id="menu_admin" role="navigation">
     <div class="sidebar-collapse">
         <ul class="nav" id="main-menu">
-            <!--            <li>-->
-            <!--                <a href="" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">5</span></a>-->
-            <!--            </li>-->
 
             <li>
                 <a href="<?= base_url('bill/show') ?>"><i class="fa fa-money"></i>Manage Bills <span
@@ -69,6 +64,9 @@ $this->load->model(['product_model', 'vendor_model', 'cate_model', 'user_model',
                         class="badge"><?= $this->user_model->do_count() ?></span></a>
             </li>
 
+            <li>
+                <a href="<?= base_url('config/index') ?>"><i class="fa fa-gear"></i>Site configuration</a>
+            </li>
 
         </ul>
     </div>

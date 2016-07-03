@@ -66,6 +66,7 @@ $route['spec/(.*)'] = 'spec_controller/$1';
 $route['bill/(.*)'] = 'bill_controller/$1';
 $route['gift/(.*)'] = 'gift_controller/$1';
 $route['report/(.*)'] = 'report_controller/$1';
+$route['config/(.*)'] = 'config_controller/$1';
 
 $route['product/show'] = 'product_controller/show';
 $route['product/search(.*)'] = 'product_controller/search$1';

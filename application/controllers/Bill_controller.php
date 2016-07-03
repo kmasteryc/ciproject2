@@ -84,7 +84,7 @@ class Bill_Controller extends MY_Controller
             $template = 'layout';
         }
 
-        $data['bill'] = $this->bill_model->do_get($id);
+        $data['bill'] = $this->bill_model->do_get($id)[0];
         $data['title'] = 'Invoice #' . $data['bill']['id'];
         $data['page'] = 'bills/detail';
         $data['my_js'] = 'bills/detail.js';

@@ -15,17 +15,11 @@ class Home_controller extends MY_Controller{
         $toplastweek = $this->report_model->getlastweekreport();
 
         foreach ($toplastweek as $cate=>$items) {
+            
             $cate_get = $this->cate_model->do_get($cate)[0];
             $toplastweek[$cate_get['cate_name']] = $toplastweek[$cate];
             unset($toplastweek[$cate]);
-//            $products = $this->cate_model->do_get(
-//                ['cates.id' => $cate],
-//                [
-//                    ['join_table' => 'products', 'join_cond' => 'products.product_cate=cates.id'],
-//                    ['join_table' => 'vendors', 'join_cond' => 'products.product_vendor=vendors.id']
-//                ],
-//                ['cate_name,vendor_slug,products.id,product_name,product_slug,product_price,product_img,product_discount']
-//            );
+
             foreach ($items as $product_id => $product_sold){
                 $product = $this->product_model->do_get(['products.id'=>$product_id],
                     [
