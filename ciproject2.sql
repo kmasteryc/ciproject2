@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.1
--- http://www.phpmyadmin.net
+-- version 4.6.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 06, 2016 at 02:15 PM
+-- Generation Time: Jul 04, 2016 at 02:37 PM
 -- Server version: 5.7.12
 -- PHP Version: 7.0.5-2+deb.sury.org~trusty+1
 
@@ -44,7 +44,12 @@ CREATE TABLE `bills` (
 
 INSERT INTO `bills` (`id`, `bill_name`, `bill_address`, `bill_note`, `bill_products`, `bill_phone`, `bill_total`, `bill_state`, `bill_done`) VALUES
 (3, 'Ko co gi ca nhe', 'oi ne iu', '</pre></pre></pre></pre></pre></pre></pre></pre></pre></pre></pre>', '{"9a1158154dfa42caddbd0694a4e9bdc8":{"product_id":"52","product_name":"HTC One A10","product_quantity":1,"product_price":11000000,"product_subtotal":11000000}}', 1699999999, 11000000, '{"1":{"state_time":"2016-05-15 15:46:05","state_commiter":"Ko co gi ca nhe"},"2":{"state_time":"2016-05-15 15:46:11","state_commiter":"215"},"3":{"state_time":"2016-05-16 15:08:41","state_commiter":"215"},"4":0}', 0),
-(4, 'Tran Duy Khanh', 'Ha Noi', 'Xin chao quy vi', '{"3295c76acbf4caaed33c36b1b5fc2cb1":{"product_id":"66","product_name":"Lenovo Yoga","product_quantity":1,"product_price":4400000,"product_subtotal":4400000}}', 1693007469, 4400000, '{"1":{"state_time":"2016-06-05 14:30:06","state_commiter":"Tran Duy Khanh"},"2":0,"3":0,"4":0}', 0);
+(4, 'Tran Duy Khanh', 'Ha Noi', 'Xin chao quy vi', '{"3295c76acbf4caaed33c36b1b5fc2cb1":{"product_id":"66","product_name":"Lenovo Yoga","product_quantity":1,"product_price":4400000,"product_subtotal":4400000}}', 1693007469, 4400000, '{"1":{"state_time":"2016-06-05 14:30:06","state_commiter":"Tran Duy Khanh"},"2":{"state_time":"2016-07-01 13:14:33","state_commiter":"215"},"3":{"state_time":"2016-07-01 13:14:44","state_commiter":"215"},"4":0}', 0),
+(5, 'Khanh', 'Son la', 'Ship cho em tai cong truong nhe', '{"a5bfc9e07964f8dddeb95fc584cd965d":{"product_id":"37","product_name":"iPhone 6s Plus","product_quantity":1,"product_price":25000000,"product_subtotal":25000000}}', 1693007469, 25000000, '{"1":{"state_time":"2016-06-29 10:01:22","state_commiter":"Khanh"},"2":{"state_time":"2016-06-29 10:02:22","state_commiter":"215"},"3":{"state_time":"2016-06-29 10:02:40","state_commiter":"215"},"4":{"state_time":"2016-06-29 10:03:06","state_commiter":"215"}}', 1),
+(6, 'TESTTTTTTTTTT', 'TESTTTTTTTTTT', 'TESTTTTTTTTTT', '{"a5bfc9e07964f8dddeb95fc584cd965d":{"product_id":"37","product_name":"iPhone 6s Plus","product_quantity":1,"product_price":25000000,"product_subtotal":25000000},"a5771bce93e200c36f7cd9dfd0e5deaa":{"product_id":"38","product_name":"Samsung Galaxy S7 Edge","product_quantity":1,"product_price":18490000,"product_subtotal":18490000}}', 2147483647, 43490000, '{"1":{"state_time":"2016-07-01 12:49:26","state_commiter":"TESTTTTTTTTTT"},"2":{"state_time":"2016-07-01 13:08:00","state_commiter":"215"},"3":{"state_time":"2016-07-01 13:08:06","state_commiter":"215"},"4":{"state_time":"2016-07-01 13:12:53","state_commiter":"215"}}', 1),
+(7, 'HEHEHEHE', 'HEHEHEHE', 'HEHEHEHEHEHEHEHE', '{"ea5d2f1c4608232e07d3aa3d998e5135":{"product_id":"64","product_name":"iPad Pro 9","product_quantity":1,"product_price":19000000,"product_subtotal":19000000},"fc490ca45c00b1249bbe3554a4fdf6fb":{"product_id":"65","product_name":"Samsung Galaxy Tab","product_quantity":1,"product_price":6000000,"product_subtotal":6000000}}', 2147483647, 25000000, '{"1":{"state_time":"2016-07-01 13:31:14","state_commiter":"HEHEHEHE"},"2":{"state_time":"2016-07-01 13:31:27","state_commiter":"215"},"3":{"state_time":"2016-07-01 13:31:30","state_commiter":"215"},"4":0}', 0),
+(8, 'Dai gia ha thanh', 'Pho nui', 'Anh mua het dong nay :D', '{"093f65e080a295f8076b1c5722a46aa2":{"product_id":"59","product_name":"Laptop Lenovo IdeaPad 100S 11IBY","product_quantity":8,"product_price":3990000,"product_subtotal":31920000},"072b030ba126b2f4b2374f342be9ed44":{"product_id":"60","product_name":"Laptop Lenovo IdeaPad 100 14IB","product_quantity":12,"product_price":5500000,"product_subtotal":66000000},"7f39f8317fbdb1988ef4c628eba02591":{"product_id":"61","product_name":"Laptop Acer ES1 431","product_quantity":15,"product_price":5500000,"product_subtotal":82500000},"44f683a84163b3523afe57c2e008bc8c":{"product_id":"62","product_name":"Laptop Acer Aspire E5 573","product_quantity":14,"product_price":9690000,"product_subtotal":135660000},"03afdbd66e7929b125f8597834fa83a4":{"product_id":"63","product_name":"Laptop Dell Inspiron 3452","product_quantity":13,"product_price":9690000,"product_subtotal":125970000}}', 2147483647, 442050000, '{"1":{"state_time":"2016-07-01 13:50:53","state_commiter":"Dai gia ha thanh"},"2":{"state_time":"2016-07-01 13:51:14","state_commiter":"215"},"3":{"state_time":"2016-07-01 13:51:16","state_commiter":"215"},"4":{"state_time":"2016-07-01 13:51:19","state_commiter":"215"}}', 1),
+(9, 'Nha ngheo xuong nui', 'Nha ngheo xuong nui', 'Nha ngheo xuong nui', '{"c0c7c76d30bd3dcaefc96f40275bdc0a":{"product_id":"50","product_name":"Asus Zenfone Selfie","product_quantity":1,"product_price":6490000,"product_subtotal":6490000},"f457c545a9ded88f18ecee47145a72c0":{"product_id":"49","product_name":"HTC One E9 Dual","product_quantity":1,"product_price":6490000,"product_subtotal":6490000},"3295c76acbf4caaed33c36b1b5fc2cb1":{"product_id":"66","product_name":"Lenovo Yoga","product_quantity":1,"product_price":4400000,"product_subtotal":4400000},"67c6a1e7ce56d3d6fa748ab6d9af3fd7":{"product_id":"47","product_name":"HTC Desire Eye","product_quantity":1,"product_price":7500000,"product_subtotal":7500000}}', 2147483647, 24880000, '{"1":{"state_time":"2016-07-01 13:52:34","state_commiter":"Nha ngheo xuong nui"},"2":{"state_time":"2016-07-01 13:52:36","state_commiter":"215"},"3":{"state_time":"2016-07-01 13:52:39","state_commiter":"215"},"4":{"state_time":"2016-07-01 13:52:41","state_commiter":"215"}}', 1);
 
 -- --------------------------------------------------------
 
@@ -65,8 +70,8 @@ CREATE TABLE `cates` (
 
 INSERT INTO `cates` (`id`, `cate_icon`, `cate_name`, `cate_slug`) VALUES
 (14, 'fa-phone', 'Phone', 'phone'),
-(15, 'fa-tablet', 'Tablet', 'Tablet'),
-(16, 'fa-laptop', 'Laptop', 'Laptop');
+(15, 'fa-tablet', 'Tablet', 'tabet'),
+(16, 'fa-laptop', 'Laptop', 'laptop');
 
 -- --------------------------------------------------------
 
@@ -86,8 +91,21 @@ CREATE TABLE `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
+('0f02799f6423535ebe47258e877c35ad9e711c2c', '192.168.19.1', 1467609098, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436373630393032343b636172745f636f6e74656e74737c613a333a7b733a31303a22636172745f746f74616c223b643a31373939393030303b733a31313a22746f74616c5f6974656d73223b643a313b733a33323a226436376438616234663463313062663232616133353365323738373931333363223b613a363a7b733a323a226964223b733a323a223339223b733a333a22717479223b643a313b733a353a227072696365223b643a31373939393030303b733a343a226e616d65223b733a32373a22536f6e7920587065726961205a35205072656d69756d204475616c223b733a353a22726f776964223b733a33323a226436376438616234663463313062663232616133353365323738373931333363223b733a383a22737562746f74616c223b643a31373939393030303b7d7d757365727c733a353a2261646d696e223b6c6576656c7c733a313a2232223b69647c733a333a22323135223b),
+('210b9226762dc4a0696b0c2bf1e33daa87390d37', '192.168.19.1', 1467376056, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436373337363035353b),
+('3dc415037f49f12dcfadf55ab38c31528c580fbf', '192.168.19.1', 1467475831, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436373437343033373b757365727c733a353a2261646d696e223b6c6576656c7c733a313a2232223b69647c733a333a22323135223b636172745f636f6e74656e74737c613a333a7b733a31303a22636172745f746f74616c223b643a393639303030303b733a31313a22746f74616c5f6974656d73223b643a313b733a33323a223033616664626436366537393239623132356638353937383334666138336134223b613a363a7b733a323a226964223b733a323a223633223b733a333a22717479223b643a313b733a353a227072696365223b643a393639303030303b733a343a226e616d65223b733a32353a224c6170746f702044656c6c20496e737069726f6e2033343532223b733a353a22726f776964223b733a33323a223033616664626436366537393239623132356638353937383334666138336134223b733a383a22737562746f74616c223b643a393639303030303b7d7d),
+('3f3ddb9aa42ee4a93afb93daa1105cd493f99446', '192.168.19.1', 1467194226, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436373139343232363b),
+('5eed86ccf1a250231319716a93e4ce2a936095d7', '192.168.19.1', 1467390958, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436373339303935343b67756573747c733a31303a225472616e204b68616e68223b757365727c733a353a2261646d696e223b6c6576656c7c733a313a2232223b69647c733a333a22323135223b4b4346494e4445527c613a313a7b733a383a2264697361626c6564223b623a303b7d),
+('68bcea6720be3285269ee6d9f44ef6247e19d774', '192.168.19.1', 1467292244, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436373239323233313b),
+('6f0a519f90a46f09a70a32ba6d6470e8e12c8576', '192.168.19.1', 1467555937, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436373535353635333b757365727c733a353a2261646d696e223b6c6576656c7c733a313a2232223b69647c733a333a22323135223b),
+('768b0d1c88468f044f66c4d33f09579bc80fd283', '192.168.19.1', 1466087412, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436363038373334323b636172745f636f6e74656e74737c613a343a7b733a31303a22636172745f746f74616c223b643a32383939393030303b733a31313a22746f74616c5f6974656d73223b643a323b733a33323a226436376438616234663463313062663232616133353365323738373931333363223b613a363a7b733a323a226964223b733a323a223339223b733a333a22717479223b643a313b733a353a227072696365223b643a31373939393030303b733a343a226e616d65223b733a32373a22536f6e7920587065726961205a35205072656d69756d204475616c223b733a353a22726f776964223b733a33323a226436376438616234663463313062663232616133353365323738373931333363223b733a383a22737562746f74616c223b643a31373939393030303b7d733a33323a223334313661373566346365613931303935303763616364386532663261656663223b613a363a7b733a323a226964223b733a323a223431223b733a333a22717479223b643a313b733a353a227072696365223b643a31313030303030303b733a343a226e616d65223b733a31303a22485443204f6e65204139223b733a353a22726f776964223b733a33323a223334313661373566346365613931303935303763616364386532663261656663223b733a383a22737562746f74616c223b643a31313030303030303b7d7d757365727c733a353a2261646d696e223b6c6576656c7c733a313a2232223b69647c733a333a22323135223b),
 ('94fe2091d875023ff891e2362b79b28e9dae938b', '192.168.10.1', 1465145221, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436353134353231353b67756573747c733a31323a225472616e2056616e204e616d223b636172745f636f6e74656e74737c613a333a7b733a31303a22636172745f746f74616c223b643a31383439303030303b733a31313a22746f74616c5f6974656d73223b643a313b733a33323a226135373731626365393365323030633336663763643964666430653564656161223b613a363a7b733a323a226964223b733a323a223338223b733a333a22717479223b643a313b733a353a227072696365223b643a31383439303030303b733a343a226e616d65223b733a32323a2253616d73756e672047616c6178792053372045646765223b733a353a22726f776964223b733a33323a226135373731626365393365323030633336663763643964666430653564656161223b733a383a22737562746f74616c223b643a31383439303030303b7d7d),
-('e8648cdd91c8eafe262d5f11e5043704b82a134a', '192.168.2.144', 1463494142, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436333439333933343b67756573747c733a393a22546573742063616920223b757365727c733a353a2261646d696e223b6c6576656c7c733a313a2232223b69647c733a333a22323135223b636172745f636f6e74656e74737c613a333a7b733a31303a22636172745f746f74616c223b643a31383439303030303b733a31313a22746f74616c5f6974656d73223b643a313b733a33323a226135373731626365393365323030633336663763643964666430653564656161223b613a363a7b733a323a226964223b733a323a223338223b733a333a22717479223b643a313b733a353a227072696365223b643a31383439303030303b733a343a226e616d65223b733a32323a2253616d73756e672047616c6178792053372045646765223b733a353a22726f776964223b733a33323a226135373731626365393365323030633336663763643964666430653564656161223b733a383a22737562746f74616c223b643a31383439303030303b7d7d4b4346494e4445527c613a313a7b733a383a2264697361626c6564223b623a303b7d);
+('a3c23111d151bd6caef2c4ee4a07ba2b8fb09e52', '192.168.19.1', 1467217682, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436373231373638323b757365727c733a353a2261646d696e223b6c6576656c7c733a313a2232223b69647c733a333a22323135223b4b4346494e4445527c613a313a7b733a383a2264697361626c6564223b623a303b7d636172745f636f6e74656e74737c613a353a7b733a31303a22636172745f746f74616c223b643a34353439303030303b733a31313a22746f74616c5f6974656d73223b643a333b733a33323a226634353763353435613964656438386631386563656534373134356137326330223b613a363a7b733a323a226964223b733a323a223439223b733a333a22717479223b643a313b733a353a227072696365223b643a363439303030303b733a343a226e616d65223b733a31353a22485443204f6e65204539204475616c223b733a353a22726f776964223b733a33323a226634353763353435613964656438386631386563656534373134356137326330223b733a383a22737562746f74616c223b643a363439303030303b7d733a33323a226135626663396530373936346638646464656239356663353834636439363564223b613a363a7b733a323a226964223b733a323a223337223b733a333a22717479223b643a313b733a353a227072696365223b643a32353030303030303b733a343a226e616d65223b733a31343a226950686f6e6520367320506c7573223b733a353a22726f776964223b733a33323a226135626663396530373936346638646464656239356663353834636439363564223b733a383a22737562746f74616c223b643a32353030303030303b7d733a33323a226436343539323065333935666564616437626262656430656361336665326530223b613a363a7b733a323a226964223b733a323a223430223b733a333a22717479223b643a313b733a353a227072696365223b643a31343030303030303b733a343a226e616d65223b733a32323a224d6963726f736f6674204c756d69612039353020584c223b733a353a22726f776964223b733a33323a226436343539323065333935666564616437626262656430656361336665326530223b733a383a22737562746f74616c223b643a31343030303030303b7d7d),
+('beb9a8037d87b6c903d24acb522096e4180c1eef', '192.168.19.1', 1467467233, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436373436373233333b),
+('d78054219190213fca9b64e5ff7426b18556ab67', '192.168.19.1', 1467536008, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436373533363030383b),
+('df4267eb2bce70622060597c37e766a97180813e', '192.168.19.1', 1467304336, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436373330343039383b),
+('e8648cdd91c8eafe262d5f11e5043704b82a134a', '192.168.2.144', 1463494142, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436333439333933343b67756573747c733a393a22546573742063616920223b757365727c733a353a2261646d696e223b6c6576656c7c733a313a2232223b69647c733a333a22323135223b636172745f636f6e74656e74737c613a333a7b733a31303a22636172745f746f74616c223b643a31383439303030303b733a31313a22746f74616c5f6974656d73223b643a313b733a33323a226135373731626365393365323030633336663763643964666430653564656161223b613a363a7b733a323a226964223b733a323a223338223b733a333a22717479223b643a313b733a353a227072696365223b643a31383439303030303b733a343a226e616d65223b733a32323a2253616d73756e672047616c6178792053372045646765223b733a353a22726f776964223b733a33323a226135373731626365393365323030633336663763643964666430653564656161223b733a383a22737562746f74616c223b643a31383439303030303b7d7d4b4346494e4445527c613a313a7b733a383a2264697361626c6564223b623a303b7d),
+('f659cabfd87e1cad93d9c6df2e8c704bc7100eeb', '192.168.19.1', 1465306660, 0x5f5f63695f6c6173745f726567656e65726174657c693a313436353330363635393b);
 
 -- --------------------------------------------------------
 
@@ -111,48 +129,31 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `comment_product`, `comment_user`, `comment_guest`, `comment_mail`, `comment_content`, `comment_time`, `comment_parent`) VALUES
-(10, 47, 1, 'SAO KO DC', '', 'SAO KO DCSAO KO DCSAO KO DCSAO KO DCSAO KO DC', '2016-05-08 22:56:07', NULL),
-(57, 37, 215, '', '', 'comment cai coi xem co sao ko', '2016-05-08 18:01:31', NULL),
-(58, 37, 215, '', '', 'comment cai coi xem co sao ko ', '2016-05-08 18:02:11', NULL),
-(60, 37, 215, '', '', 'comment cai coi xem co sao kocomment cai coi xem co sao ko', '2016-05-08 18:02:16', NULL),
-(61, 37, 215, '', '', 'comment cai coi xem co sao kocomment cai coi xem co sao ko', '2016-05-08 18:02:18', NULL),
-(62, 37, 215, '', '', 'comment cai coi xem co sao kocomment cai coi xem co sao ko', '2016-05-08 18:02:21', NULL),
-(67, 40, 1, 'KO DC LA CHIU THUA', '', 'KO DC LA CHIU THUAKO DC LA CHIU THUA', '2016-05-08 18:07:01', NULL),
-(68, 39, 1, 'Cho minh thu cai nhe', '', 'Cho minh thu cai nhe Cho minh thu cai nhe Cho minh thu cai nhe Cho minh thu cai nhe Cho minh thu cai nhe', '2016-05-09 10:48:55', NULL),
-(69, 46, 1, 'Toi la khach', '', 'Toi la khachToi la khach Toi la khachToi la khachToi la khach', '2016-05-10 06:53:07', NULL),
-(70, 49, 1, 'Test', '', 'TestTestTestTestTest', '2016-05-10 18:34:40', NULL),
-(71, 37, 215, '', '', 'test cai nha em test cai nha em test cai nha em test cai nha em ', '2016-05-10 21:25:16', NULL),
-(73, 38, 1, '', 'sasasasaas@dsdasdas', 'sasasasaas@dsdasdassasasasaas@dsdasdassasasasaas@dsdasdas', '2016-05-11 02:36:39', 12),
-(75, 37, 215, '', '', '$(":input[name=intparent]") $(":input[name=intparent]")$(":input[name=intparent]") $(":input[name=intparent]")', '2016-05-10 21:40:52', 58),
-(76, 37, 215, '', '', '$(":input[name=intparent]")$(":input[name=intparent]")$(":input[name=intparent]")$(":input[name=intparent]")$(":input[name=intparent]")$(":input[name=intparent]")', '2016-05-10 21:41:16', 75),
-(77, 37, 215, '', '', 'sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi ', '2016-05-10 22:35:00', NULL),
-(78, 37, 215, '', '', 'sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi sao lai the duoc nhi ', '2016-05-10 22:35:41', NULL),
-(79, 37, 215, '', '', 'test reply cai test reply cai test reply cai test reply cai test reply cai ', '2016-05-10 22:40:48', 78),
-(80, 37, 215, '', '', 'Reply cai cho no mau nhe', '2016-05-10 22:45:33', 79),
-(82, 37, 215, '', '', '    $(\'#comment_box\').html(\'<div><img style="left: 50%; position: relative" id="loader-img" alt="" src="\' base_url \'public/img/loading2.gif" /></div>\');\n', '2016-05-10 22:55:50', NULL),
-(86, 37, 215, '', '', 'Reply ne Reply ne Reply ne Reply ne Reply ne ', '2016-05-11 00:11:26', 82),
-(87, 37, 215, '', '', 'T ko reply dau T ko reply dau T ko reply dau T ko reply dau ', '2016-05-11 00:12:06', 78),
-(88, 37, 215, '', '', 'T ko rep lai chung may dau T ko rep lai chung may dau T ko rep lai chung may dau ', '2016-05-11 00:13:22', NULL),
-(89, 37, 1, 'Test cai ', '', 'Duoc roi nhe', '2016-05-16 22:50:32', NULL),
-(90, 37, 1, 'Test cai ', '', 'The Your comment field must be at least 10 characters in length.', '2016-05-16 22:50:57', NULL),
-(91, 37, 1, 'Test cai ', '', 'Duoc chua anh hai', '2016-05-16 22:53:11', 71),
-(92, 37, 1, 'Test cai ', '', 'cho em test cai', '2016-05-16 22:53:44', NULL),
-(93, 37, 1, 'Test cai ', '', 'tst cai nhe', '2016-05-16 23:00:27', NULL),
-(94, 37, 1, 'Test cai ', '', 'ko duoc roi', '2016-05-16 23:00:34', NULL),
-(95, 37, 1, 'Test cai ', '', 'dasdsdasdsdasdsdasds', '2016-05-16 23:03:17', NULL),
-(97, 37, 215, '', '', 'sdasdasdasdasdasdasdasd', '2016-05-16 23:06:15', NULL),
-(98, 37, 215, '', '', 'test cai nhe test cai nhe test cai nhe test cai nhe', '2016-05-16 23:07:11', NULL),
-(99, 37, 215, '', '', 'dasdsadasd sa', '2016-05-16 23:11:00', NULL),
-(100, 37, 215, '', '', '1234444444444', '2016-05-16 23:11:08', NULL),
-(101, 37, 215, '', '', 'sao kodc\nsao kodc', '2016-05-17 04:35:04', NULL),
-(102, 37, 215, '', '', '$$$$$$$$$$$$$$$$$$$$$$$$$@#@#@#@#@#@#', '2016-05-17 04:35:20', NULL),
-(103, 38, 215, '', '', 'Cho minh thu cai nhe', '2016-05-17 05:08:42', NULL),
-(104, 38, 215, '', '', 'duoc chua ba con', '2016-05-17 05:09:17', NULL),
-(105, 38, 215, '', '', 'duoc roi nhe anh', '2016-05-17 05:09:27', 104),
-(106, 38, 215, '', '', 'sdsadasdasdasd', '2016-05-17 05:25:09', 104),
-(107, 66, 1, 'Tran Van Nam', '', 'San pham nay tot khong anh?', '2016-06-05 14:27:59', NULL),
-(108, 66, 1, 'Tran Van Nam', '', 'San pham nay dung duoc em a', '2016-06-05 14:28:39', 107),
-(109, 38, 1, 'Tran Van Nam', '', 'Test cai nay phat nhe', '2016-06-05 14:49:53', NULL);
+(3, 37, 215, '', '', 'Xin chao ban nhe', '2016-07-01 14:28:47', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `configs`
+--
+
+CREATE TABLE `configs` (
+  `config_name` varchar(100) NOT NULL,
+  `config_title` varchar(200) NOT NULL,
+  `config_value` text,
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `configs`
+--
+
+INSERT INTO `configs` (`config_name`, `config_title`, `config_value`, `id`) VALUES
+('slogan', 'Slogan for website', 'Fast - Trust - Smart Store 2', 1),
+('site_email', 'Email', 'kmasteryc@gmail.com', 2),
+('sale_phone', 'Sale phone', '0186666888', 3),
+('store_address', 'Store\'s address', 'Silicon Valley', 4),
+('company', 'Company name', 'KmasterYC JSC', 5);
 
 -- --------------------------------------------------------
 
@@ -320,16 +321,7 @@ INSERT INTO `details` (`detail_product`, `detail_spec`, `detail_value`) VALUES
 (65, 16, 'Dual Core 1.2 Ghz'),
 (65, 17, '152x154x90'),
 (65, 18, 'yes'),
-(65, 19, '0'),
-(66, 11, '9'),
-(66, 12, '10'),
-(66, 13, '9'),
-(66, 14, '64'),
-(66, 15, 'Android'),
-(66, 16, ' Octa Core 1.6Ghz'),
-(66, 17, '151.7x76x7.8'),
-(66, 18, 'yes'),
-(66, 19, '0');
+(65, 19, '0');
 
 -- --------------------------------------------------------
 
@@ -349,8 +341,9 @@ CREATE TABLE `gifts` (
 --
 
 INSERT INTO `gifts` (`id`, `gift_content`, `gift_startdate`, `gift_enddate`) VALUES
-(20, 'Trả góp lãi suất 0% Xem chi tiết ', '2016-05-02', '2016-05-31'),
-(21, ' Giảm ngay 5% khi Mua Laptop/ Tablet', '2016-05-01', '2016-05-30');
+(20, 'Bonus 1 girl-friend per 10 products :D', '2016-05-02', '2016-05-31'),
+(21, 'Discount 10% when going with a beatiful girl! :D', '2016-05-01', '2016-05-30'),
+(22, 'A free mouse', '2016-06-09', '2016-06-30');
 
 -- --------------------------------------------------------
 
@@ -372,6 +365,7 @@ INSERT INTO `gift_product` (`gift_id`, `product_id`) VALUES
 (21, 37),
 (20, 38),
 (21, 38),
+(22, 38),
 (20, 39),
 (21, 39),
 (20, 40),
@@ -451,8 +445,32 @@ INSERT INTO `products` (`id`, `product_name`, `product_slug`, `product_price`, `
 (62, 'Laptop Acer Aspire E5 573', 'Laptop-Acer-Aspire-E5-573', 9690000, 0, 28, 16, 'acer-aspire-e5-573-i3-5005u-4gb-500gb-win-10-400-400x400.png', 0, '2016-05-25', '<h1>Acer Aspire E5 573 i3 với thiết kế sang trọng hơn, cấu h&igrave;nh Core i3 thế hệ mới ph&ugrave; hợp với nhu cầu c&ocirc;ng việc th&ocirc;ng thường.</h1>\r\n\r\n<p><strong>Thiết kế chắc chắn sang trọng</strong></p>\r\n\r\n<p>Chiếc Acer Aspire E5 i3&nbsp;c&oacute; vẻ ngo&agrave;i thật sự sang trọng với bộ vỏ phay xước giả kim loại sang trọng gi&uacute;p cho m&aacute;y trở n&ecirc;n th&acirc;n thiện với người sử dụng.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/44/77486/acer-aspire-e5-573-i3-5005u-4gb-500gb-win-10-1.jpg" onclick="return false;"><img alt="Những đường xước được gia công tinh tế, tạo thành những hoa văn độc đáo" src="https://cdn1.tgdd.vn/Products/Images/44/77486/acer-aspire-e5-573-i3-5005u-4gb-500gb-win-10-1.jpg" title="Những đường xước được gia công tinh tế, tạo thành những hoa văn độc đáo" /></a></p>\r\n\r\n<p><em>Những đường xước được gia c&ocirc;ng tinh tế, tạo th&agrave;nh những hoa văn độc đ&aacute;o</em></p>\r\n\r\n<p>B&ecirc;n cạnh đ&oacute;, vỏ m&aacute;y cũng hạn chế b&aacute;m dấu v&acirc;n tay, bụi bẩn trong suốt qu&aacute; tr&igrave;nh sử dụng. Nhờ đ&oacute;, chiếc laptop của bạn lu&ocirc;n sạch sẽ, s&aacute;ng b&oacute;ng, sẵn s&agrave;ng c&ugrave;ng bạn tham dự những cuộc họp, gặp đối t&aacute;c&hellip; thật ấn tượng v&agrave; thanh lịch.&nbsp;</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/44/77486/acer-aspire-e5-573-i3-5005u-4gb-500gb-win-10-2.jpg" onclick="return false;"><img alt="Máy khá nhỏ gọn" src="https://cdn3.tgdd.vn/Products/Images/44/77486/acer-aspire-e5-573-i3-5005u-4gb-500gb-win-10-2.jpg" title="Máy khá nhỏ gọn" /></a></p>\r\n\r\n<p>M&aacute;y kh&aacute; nhỏ gọn, với c&aacute;c k&iacute;ch thước: D&agrave;i 381.6 mm - Ngang 256 mm - D&agrave;y 29.2 mm, trọng lượng 2.4 kg, kh&aacute; ph&ugrave; hợp với người d&ugrave;ng thường xuy&ecirc;n di chuyển. Việc sắp xếp c&aacute;c cổng kết nối kh&aacute; hợp l&yacute;, rộng r&atilde;i để người d&ugrave;ng thao t&aacute;c.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/44/77486/acer-aspire-e5-573-i3-5005u-4gb-500gb-win-10-3-1.jpg" onclick="return false;"><img alt="Máy khá nhỏ gọn" src="https://cdn.tgdd.vn/Products/Images/44/77486/acer-aspire-e5-573-i3-5005u-4gb-500gb-win-10-3-1.jpg" title="Máy khá nhỏ gọn" /></a></p>\r\n\r\n<p>Tuy nhi&ecirc;n, thay v&igrave; được v&aacute;t mỏng như những d&ograve;ng m&aacute;y hiện nay, chiếc&nbsp;Acer Aspire E5 573 i3&nbsp;chỉ được v&aacute;t rất nhẹ, tạo th&agrave;nh một đế m&aacute;y kh&aacute; bằng phẳng, chắc chắn. Tổng thể,&nbsp;chiếc Aspire E5 573 i3&nbsp;kh&ocirc;ng nổi bật với độ si&ecirc;u mỏng nhưng vẫn tạo được sự gọn g&agrave;ng, năng động.&nbsp;</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/44/77486/acer-aspire-e5-573-i3-5005u-4gb-500gb-win-10-4.jpg" onclick="return false;"><img alt="Cạnh trái là cổng VGA, cổng LAN, cổng HDMI,  2 cổng USB 3.0 và jack cắm tai nghe" src="https://cdn2.tgdd.vn/Products/Images/44/77486/acer-aspire-e5-573-i3-5005u-4gb-500gb-win-10-4.jpg" title="Cạnh trái là cổng VGA, cổng LAN, cổng HDMI,  2 cổng USB 3.0 và jack cắm tai nghe" /></a></p>\r\n\r\n<p><em>Cạnh tr&aacute;i l&agrave; cổng VGA, cổng LAN, cổng HDMI,&nbsp; 2 cổng&nbsp;<a href="https://www.thegioididong.com/usb/usb-sandisk-sdcz43-16gb-30" target="_blank" title="USB 16GB 3.0 Sandisk SDCZ43">USB 3.0</a>&nbsp;v&agrave; jack cắm&nbsp;<a href="https://www.thegioididong.com/tai-nghe-day/tai-nghe-ep-sony-mdr-e9lp-bc-e-hong" target="_blank" title="Tai nghe EP Sony MDR-E9LP chính hãng">tai nghe</a></em></p>\r\n', 0, 0, 0),
 (63, 'Laptop Dell Inspiron 3452', 'Laptop-Dell-Inspiron-3452', 9690000, 0, 29, 16, 'dell-inspiron-3452-n3700-4gb-500gb-win10-300-400-400x400.png', 0, '2016-05-26', '<h1>Dell Inspiron 3452 N3700 - Laptop tốt trong tầm gi&aacute;</h1>\r\n\r\n<p><strong>Để đ&aacute;p ứng nhu cầu sử dụng m&aacute;y t&iacute;nh b&igrave;nh d&acirc;n với mức gi&aacute; rất hấp dẫn.&nbsp;</strong><strong><a href="https://www.thegioididong.com/laptop-dell" target="_blank" title="Laptop thương hiệu Dell">Dell</a></strong><strong>&nbsp;tung ra thế hệ&nbsp;</strong><strong><a href="https://www.thegioididong.com/laptop" target="_blank" title="Laptop các thương hiệu">laptop</a></strong><strong>&nbsp;14 inch Inspiron 3452 N3700. Thiết bị n&agrave;y sở hữu cấu h&igrave;nh rất vừa phải c&acirc;n đối hợp l&yacute; giữa nhu cầu của người d&ugrave;ng v&agrave; t&uacute;i tiền. Đ&aacute;ng ch&uacute; &yacute; Dell Inspiron 3452 c&oacute; thiết kế rất mỏng v&agrave; rất nhẹ.</strong></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/44/74399/dell-inspiron-3452-n3700-4gb-500gb-win101.jpg" onclick="return false;"><img alt="Dell Inspiron 3452 N3700/4GB/500GB/Win10" src="https://cdn4.tgdd.vn/Products/Images/44/74399/dell-inspiron-3452-n3700-4gb-500gb-win101.jpg" title="Dell Inspiron 3452 N3700/4GB/500GB/Win10" /></a></p>\r\n\r\n<p><em>Một sản phẩm c&oacute; mức gi&aacute; hết sức hợp l&yacute; v&agrave; thiết kế đẹp</em></p>\r\n\r\n<p><strong>Thiết kế mỏng nhẹ, t&iacute;nh di động cao</strong></p>\r\n\r\n<p>Dell Inspiron 3452 được tạo n&ecirc;n từ chất liệu nhựa do đ&oacute; th&acirc;n m&aacute;y c&oacute; t&iacute;nh di động cao với ưu thế ch&iacute;nh l&agrave; độ mỏng chỉ 21.4 mm v&agrave; nhẹ chỉ 1.9 kg, rất thuận tiện để mang theo b&ecirc;n m&igrave;nh kể cả khi l&agrave;m việc cũng như phục vụ nhu cầu c&aacute; nh&acirc;n.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/44/74399/dell-inspiron-3452-n3700-4gb-500gb-win102.jpg" onclick="return false;"><img alt="Mặt lưng của máy được làm nhám cho cảm giác cầm chắc chắn và bớt đi sự nhàm chán" src="https://cdn1.tgdd.vn/Products/Images/44/74399/dell-inspiron-3452-n3700-4gb-500gb-win102.jpg" title="Mặt lưng của máy được làm nhám cho cảm giác cầm chắc chắn và bớt đi sự nhàm chán" /></a></p>\r\n\r\n<p><em>Mặt lưng của m&aacute;y được l&agrave;m nh&aacute;m cho cảm gi&aacute;c cầm chắc chắn v&agrave; bớt đi sự nh&agrave;m ch&aacute;n</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/44/74399/dell-inspiron-3452-n3700-4gb-500gb-win103.jpg" onclick="return false;"><img alt="Cạnh phải máy chỉ có hai cổng kết nối USB 2.0 cùng jack audio 3.5 mm, thiếu đi ổ đĩa DVD như thường thấy" src="https://cdn3.tgdd.vn/Products/Images/44/74399/dell-inspiron-3452-n3700-4gb-500gb-win103.jpg" title="Cạnh phải máy chỉ có hai cổng kết nối USB 2.0 cùng jack audio 3.5 mm, thiếu đi ổ đĩa DVD như thường thấy" /></a></p>\r\n\r\n<p><em>Cạnh phải m&aacute;y chỉ c&oacute; hai cổng kết nối&nbsp;<a href="https://www.thegioididong.com/usb/usb-apacer-ah328-8gb-20" target="_blank" title="Thông tin chi tiết USB 8GB 2.0 Apacer AH328">USB 2.0</a>&nbsp;c&ugrave;ng jack audio 3.5 mm, thiếu đi ổ đĩa DVD như thường thấy</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/44/74399/dell-inspiron-3452-n3700-4gb-500gb-win104.jpg" onclick="return false;"><img alt="Cạnh trái được trang bị cổng kết nối HDMI, cổng USB 3.0, khe cắm thẻ nhớ SD, tuy nhiên lại thiếu đi cổng mạng LAN và VGA" src="https://cdn.tgdd.vn/Products/Images/44/74399/dell-inspiron-3452-n3700-4gb-500gb-win104.jpg" title="Cạnh trái được trang bị cổng kết nối HDMI, cổng USB 3.0, khe cắm thẻ nhớ SD, tuy nhiên lại thiếu đi cổng mạng LAN và VGA" /></a></p>\r\n\r\n<p><em>Cạnh tr&aacute;i được trang bị cổng kết nối&nbsp;<a href="https://www.thegioididong.com/tin-tuc/hdmi-la-gi--590061" target="_blank" title="Tìm hiểu cổng HDMI là gì?">HDMI</a>, cổng&nbsp;<a href="https://www.thegioididong.com/usb/usb-apacer-ah354-16gb-30" target="_blank" title="Thông tin chi tiết USB 16GB 3.0 Apacer AH354">USB 3.0</a>, khe cắm&nbsp;</em><em><a href="https://www.thegioididong.com/tin-tuc/the-nho-la-gi-cach-chon-the-nho-595430" target="_blank" title="Thẻ nhớ là gì, cách chọn thẻ nhớ">thẻ nhớ</a></em><em>&nbsp;SD, tuy nhi&ecirc;n lại thiếu đi cổng mạng LAN v&agrave; VGA</em></p>\r\n\r\n<p><strong>M&agrave;n h&igrave;nh 14 inch hiển thị r&otilde; n&eacute;t</strong></p>\r\n\r\n<p>Dell Inspiron 3452 được trang bị m&agrave;n h&igrave;nh như nhiều sản phẩm tầm gi&aacute; 15 triệu trở xuống. Với k&iacute;ch thước 14 inch&nbsp;<a href="https://www.thegioididong.com/tin-tuc/do-phan-giai-man-hinh-qhd-hd-fullhd-2k-4k-la-gi--592178#hd" target="_blank" title="Tìm hiểu độ phân giải màn hình HD là gì?">độ ph&acirc;n giải HD</a>&nbsp;1366 x 768 px, c&ocirc;ng nghệ m&agrave;n h&igrave;nh&nbsp;<a href="https://www.thegioididong.com/tin-tuc/cac-chuan-man-hinh-su-dung-tren-laptop-747028#truelife" target="_blank" title="Tìm hiểu chuẩn công nghệ màn hình HD WLED TrueLife">HD WLED TrueLife</a>&nbsp;gi&uacute;p h&igrave;nh ảnh được hiển thị đẹp v&agrave; r&otilde; r&agrave;ng. Đối với nhu cầu lướt web, xem phim, l&agrave;m việc th&igrave; ho&agrave;n to&agrave;n ph&ugrave; hợp.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/44/74399/dell-inspiron-3452-n3700-4gb-500gb-win105.jpg" onclick="return false;"><img alt="Màn hình có chất lượng tốt, độ sáng cao" src="https://cdn2.tgdd.vn/Products/Images/44/74399/dell-inspiron-3452-n3700-4gb-500gb-win105.jpg" title="Màn hình có chất lượng tốt, độ sáng cao" /></a></p>\r\n\r\n<p><em>M&agrave;n h&igrave;nh c&oacute; chất lượng tốt, độ s&aacute;ng cao</em></p>\r\n\r\n<p><strong>Cấu h&igrave;nh hợp l&yacute; trong mức gi&aacute;</strong></p>\r\n\r\n<p>Intel đ&atilde; ra mắt d&ograve;ng N để sử dụng cho c&aacute;c d&ograve;ng m&aacute;y gi&aacute; rẻ, đem đến hiệu năng vừa phải vừa th&iacute;ch hợp với t&uacute;i tiền.&nbsp;<a href="https://www.thegioididong.com/tin-tuc/tim-hieu-vi-xu-ly-may-tinh-cpu-intel-596066#intelpentinum" target="_blank" title="Tìm hiểu vi xử lý máy tính CPU Intel Pentium">Intel Pentium</a>&nbsp;c&ugrave;ng mức&nbsp;<a href="https://www.thegioididong.com/tin-tuc/ram-laptop-599009" target="_blank" title="Tìm hiểu các loại RAM trên laptop ">RAM</a>&nbsp;4GB b&ecirc;n trong m&aacute;y l&agrave; điều kiện rất th&iacute;ch hợp với nhu cầu phổ th&ocirc;ng như c&ocirc;ng việc văn ph&ograve;ng, lướt web, xem phim.</p>\r\n\r\n<p>Ngo&agrave;i ra thiết bị n&agrave;y được c&agrave;i sẵn hệ điều h&agrave;nh&nbsp;<a href="https://www.thegioididong.com/tin-tuc/tim-hieu-cac-he-dieu-hanh-tren-laptop-599737#windows10" target="_blank" title="Tìm hiểu hệ điều hành Windows 10 trên máy tính">Windows 10</a>&nbsp;bản quyền với giao diện hiện đại v&agrave; t&iacute;ch hợp c&aacute;c t&iacute;nh năng ti&ecirc;n tiến phục vụ mọi nhu cầu của người d&ugrave;ng.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/44/74399/dell-inspiron-3452-n3700-4gb-500gb-win106.jpg" onclick="return false;"><img alt="Hệ điều hành hiện đại thuận tiện cho mọi công việc" src="https://cdn4.tgdd.vn/Products/Images/44/74399/dell-inspiron-3452-n3700-4gb-500gb-win106.jpg" title="Hệ điều hành hiện đại thuận tiện cho mọi công việc" /></a></p>\r\n\r\n<p><em>Hệ điều h&agrave;nh hiện đại thuận tiện cho mọi c&ocirc;ng việ</em></p>\r\n', 0, 0, 0),
 (64, 'iPad Pro 9', 'iPad-Pro-9', 19000000, 200000, 25, 15, 'ipad-pro-97-inch-wifi-128gb-300a-300x300.jpg', 0, '2016-05-26', '<h1>iPad Pro 9.7 inch được n&acirc;ng cấp chất lượng hiển thị, chất lượng camera tốt hơn rất nhiều, c&ugrave;ng c&aacute;c phụ kiện như b&agrave;n ph&iacute;m rời v&agrave; b&uacute;t Pencil chuy&ecirc;n dụng.</h1>\r\n\r\n<p><strong>Thiết kế sang trọng</strong></p>\r\n\r\n<p>iPad Pro 9.7 inch c&oacute; k&iacute;ch thước v&agrave; thiết kế rất giống với iPad Air 2 nhưng vẫn c&oacute; sự kh&aacute;c biệt l&agrave; c&oacute; th&ecirc;m m&agrave;u v&agrave;ng hồng rất hiện đại v&agrave; c&oacute; đến 4 chiếc loa ngo&agrave;i đem đến trải nghiệm tốt hơn.</p>\r\n\r\n<p>Th&acirc;n m&aacute;y c&oacute; trọng lượng chỉ 437 g v&agrave; mỏng chỉ 6.1 mm, sử dụng chất liệu nh&ocirc;m nguy&ecirc;n khối sang trọng, giống phong c&aacute;ch thường thấy tr&ecirc;n&nbsp;<a href="https://www.thegioididong.com/may-tinh-bang-apple-ipad" target="_blank" title="Máy tính bảng iPad">iPad</a>&nbsp;kh&aacute;c của Apple.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/76976/ipad-pro-97-inch-wifi-128gb-2.jpg" onclick="return false;"><img alt="Màu vàng hồng quý phái" src="https://cdn4.tgdd.vn/Products/Images/522/76976/ipad-pro-97-inch-wifi-128gb-2.jpg" title="Màu vàng hồng quý phái" /></a></p>\r\n\r\n<p><em>M&agrave;u v&agrave;ng hồng qu&yacute; ph&aacute;i</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/76976/ipad-pro-97-inch-wifi-128gb-3.jpg" onclick="return false;"><img alt="Thiết bị có đến 4 loa, 2 loa cạnh trên cùng và 2 loa dưới" src="https://cdn1.tgdd.vn/Products/Images/522/76976/ipad-pro-97-inch-wifi-128gb-3.jpg" title="Thiết bị có đến 4 loa, 2 loa cạnh trên cùng và 2 loa dưới" /></a></p>\r\n\r\n<p><em>Thiết bị c&oacute; đến 4 loa, 2 loa cạnh tr&ecirc;n c&ugrave;ng v&agrave; 2 loa dưới</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/76976/ipad-pro-97-inch-wifi-128gb-4.jpg" onclick="return false;"><img alt="Góc này tập trung khá nhiều chi tiết của máy, camera được làm lồi rõ ràng" src="https://cdn3.tgdd.vn/Products/Images/522/76976/ipad-pro-97-inch-wifi-128gb-4.jpg" title="Góc này tập trung khá nhiều chi tiết của máy, camera được làm lồi rõ ràng" /></a></p>\r\n\r\n<p><em>G&oacute;c n&agrave;y tập trung kh&aacute; nhiều chi tiết của m&aacute;y, camera được l&agrave;m lồi r&otilde; r&agrave;ng</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/76976/ipad-pro-97-inch-wifi-128gb-5.jpg" onclick="return false;"><img alt="Phía dưới màn hình là cảm biến dấu vân tay, tốc độ của nó không được nhanh bằng TouchID trên iPhone 6s" src="https://cdn.tgdd.vn/Products/Images/522/76976/ipad-pro-97-inch-wifi-128gb-5.jpg" title="Phía dưới màn hình là cảm biến dấu vân tay, tốc độ của nó không được nhanh bằng TouchID trên iPhone 6s" /></a></p>\r\n\r\n<p><em>Ph&iacute;a dưới m&agrave;n h&igrave;nh l&agrave; cảm biến dấu v&acirc;n tay, tốc độ của n&oacute; kh&ocirc;ng được nhanh bằng TouchID tr&ecirc;n iPhone 6s</em></p>\r\n\r\n<p><strong>M&agrave;n h&igrave;nh 9.7 inch</strong></p>\r\n\r\n<p>C&oacute; k&iacute;ch thước m&agrave;n h&igrave;nh l&agrave; 9.7 inch, độ ph&acirc;n giải 1536 x 2048 pixels, với chất lượng hiển thị rất tốt, thiết bị n&agrave;y c&ograve;n được trang bị th&ecirc;m khả năng điều chỉnh tự động nhờ c&aacute;c cảm biến gắn tr&ecirc;n m&aacute;y, gi&uacute;p biến đổi m&agrave;u sắc m&ocirc;i trường.</p>\r\n\r\n<p>So với&nbsp;<a href="https://www.thegioididong.com/may-tinh-bang/ipad-air-2-cellular" target="_blank" title="Máy tính bảng iPad Air 2">iPad Air 2</a>&nbsp;thiết bị n&agrave;y c&oacute; độ s&aacute;ng cao hơn v&agrave; được hỗ trợ th&ecirc;m tấm nền chống ch&oacute;i, rất hiệu quả khi sử dụng ngo&agrave;i trời.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/76976/ipad-pro-97-inch-wifi-128gb-6.jpg" onclick="return false;"><img alt="Tính năng True Tone giúp màn hình thích nghi tốt hơn với môi trường" src="https://cdn2.tgdd.vn/Products/Images/522/76976/ipad-pro-97-inch-wifi-128gb-6.jpg" title="Tính năng True Tone giúp màn hình thích nghi tốt hơn với môi trường" /></a></p>\r\n\r\n<p><em>T&iacute;nh năng True Tone gi&uacute;p m&agrave;n h&igrave;nh th&iacute;ch nghi tốt hơn với m&ocirc;i trường</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/76976/ipad-pro-97-inch-wifi-128gb-7.jpg" onclick="return false;"><img alt="Chất lượng hiển thị tuyệt vời" src="https://cdn4.tgdd.vn/Products/Images/522/76976/ipad-pro-97-inch-wifi-128gb-7.jpg" title="Chất lượng hiển thị tuyệt vời" /></a></p>\r\n\r\n<p><em>Chất lượng hiển thị tuyệt vời</em></p>\r\n\r\n<p><strong>Mạnh mẽ với chip A9X</strong></p>\r\n\r\n<p>iPad Pro 9.7 inch d&ugrave;ng&nbsp;<a href="https://www.thegioididong.com/hoi-dap/chip-xu-ly-apple-a9-tren-iphone-6s-va-6s-plus-733695" target="_blank" title="Tìm hiểu chip A9">chip A9X</a>, mạnh mẽ hơn nhiều so với con chip A8X tr&ecirc;n iPad Air 2, tốc độ 2.16 GHz, c&oacute; RAM 2 GB v&agrave; bộ nhớ trong 128 GB.</p>\r\n\r\n<p>C&ugrave;ng hệ điều h&agrave;nh&nbsp;<a href="https://www.thegioididong.com/tin-tuc/he-dieu-hanh-ios-la-gi--592559" target="_blank" title="Tìm hiểu hệ điều hành iOS ">iOS 9.3</a>&nbsp;c&aacute;c t&aacute;c vụ đa nhiệm chia đ&ocirc;i m&agrave;n h&igrave;nh hoạt động rất mượt m&agrave;, mặc d&ugrave; chỉ c&oacute; 2 GB RAM.</p>\r\n\r\n<p>Thiết bị trang bị vi&ecirc;n pin sử dụng trung b&igrave;nh được khoảng 10 giờ, rất tốt v&agrave; bền bỉ.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/76976/ipad-pro-97-inch-wifi-128gb-8.jpg" onclick="return false;"><img alt="Cấu hình tốt giúp thiết bị có khả năng giải trí tốt" src="https://cdn1.tgdd.vn/Products/Images/522/76976/ipad-pro-97-inch-wifi-128gb-8.jpg" title="Cấu hình tốt giúp thiết bị có khả năng giải trí tốt" /></a></p>\r\n\r\n<p><em>Cấu h&igrave;nh tốt gi&uacute;p thiết bị c&oacute; khả năng giải tr&iacute; tốt</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/76976/ipad-pro-97-inch-wifi-128gb-9.jpg" onclick="return false;"><img alt="Apple thiết bị thêm phụ kiện bút Apple Pencil và bàn phím rời" src="https://cdn3.tgdd.vn/Products/Images/522/76976/ipad-pro-97-inch-wifi-128gb-9.jpg" title="Apple thiết bị thêm phụ kiện bút Apple Pencil và bàn phím rời" /></a></p>\r\n\r\n<p><em>Apple trang bị th&ecirc;m phụ kiện b&uacute;t Apple Pencil v&agrave; b&agrave;n ph&iacute;m rời</em></p>\r\n\r\n<p><strong>Camera 12 MP</strong></p>\r\n\r\n<p>iPad Pro 9.7 inch được n&acirc;ng cấp camera kh&aacute; ấn tượng với độ ph&acirc;n giải camera sau đến 12 MP hỗ trợ khả năng quay video 4K (đầu ti&ecirc;n tr&ecirc;n iPad). C&oacute; c&aacute;c t&iacute;nh năng tương tự tr&ecirc;n&nbsp;<a href="https://www.thegioididong.com/dtdd/iphone-6-128gb" target="_blank" title="Điện thoại iPhone 6 128 GB">iPhone 6</a>&nbsp;v&agrave; 6s như chụp ảnh động Live Photos, lấy n&eacute;t điểm ảnh Focus Pixel, đ&egrave;n Flash 2 tone m&agrave;u&hellip;</p>\r\n\r\n<p>Camera trước của m&aacute;y đến 5 MP cũng hỗ trợ nh&aacute;y Flash m&agrave;n h&igrave;nh để tăng độ s&aacute;ng cho bức ảnh ch&acirc;n dung.</p>\r\n', 0, 0, 0),
-(65, 'Samsung Galaxy Tab', 'Samsung-Galaxy-Tab', 6000000, 300000, 25, 15, 'samsung-galaxy-tab-e-96-sm-t561-400-400x400.png', 0, '2016-05-26', '<h1>Samsung Galaxy Tab E 9.6 l&agrave; một sự lựa chọn cho bạn th&iacute;ch một chiếc m&aacute;y c&oacute; m&agrave;n h&igrave;nh lớn để giải tr&iacute; thoải m&aacute;i hơn nhưng cấu h&igrave;nh kh&ocirc;ng qu&aacute; thấp.</h1>\r\n\r\n<p><strong>Thiết kế với mặt lưng đẹp</strong></p>\r\n\r\n<p>Với m&agrave;n h&igrave;nh lớn 9.6 inch n&ecirc;n m&aacute;y c&oacute;&nbsp;k&iacute;ch thuớc kh&aacute; lớn, trọng lượng&nbsp;495 g&nbsp;kh&aacute; chắc tay khi cầm.</p>\r\n\r\n<p>Mặt lưng c&oacute; c&aacute;c hoạ tiết c&aacute;c chấm nổi vừa tạo điểm nhấn, vừa gi&uacute;p bạn cầm m&aacute;y được chắc chắn hơn, hạn chế trơn tay khi sử dụng.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/73280/samsung-galaxy-tab-e-96-sm-t5612.jpg" onclick="return false;"><img alt="Mặt lưng được làm nhám với hoa văn nổi, cho cảm giác cầm tốt hơn, phần này có thể tháo rời" src="https://cdn1.tgdd.vn/Products/Images/522/73280/samsung-galaxy-tab-e-96-sm-t5612.jpg" title="Mặt lưng được làm nhám với hoa văn nổi, cho cảm giác cầm tốt hơn, phần này có thể tháo rời" /></a></p>\r\n\r\n<p><em>Hoạ tiết ở mặt lưng m&aacute;y, logo&nbsp;<a href="https://www.thegioididong.com/may-tinh-bang-samsung" target="_blank" title="Máy tính bảng hãng Samsung">Samsung</a>&nbsp;đặc trưng</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/73280/samsung-galaxy-tab-e-96-sm-t561-2-1.jpg" onclick="return false;"><img alt="Máy mỏng đẹp, các phím vật lí được tập trung nhiều ở cạnh trái máy" src="https://cdn3.tgdd.vn/Products/Images/522/73280/samsung-galaxy-tab-e-96-sm-t561-2-1.jpg" title="Máy mỏng đẹp, các phím vật lí được tập trung nhiều ở cạnh trái máy" /></a></p>\r\n\r\n<p><em>M&aacute;y mỏng đẹp, kh&ocirc;ng qu&aacute; d&agrave;y</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/73280/samsung-galaxy-tab-e-96-sm-t561-6-1.jpg" onclick="return false;"><img alt="Khe gắn sim và mở rộng thẻ nhớ tối đa 128 GB" src="https://cdn.tgdd.vn/Products/Images/522/73280/samsung-galaxy-tab-e-96-sm-t561-6-1.jpg" title="Khe gắn sim và mở rộng thẻ nhớ tối đa 128 GB" /></a></p>\r\n\r\n<p><em>Khe gắn sim v&agrave; mở rộng&nbsp;<a href="https://www.thegioididong.com/the-nho-dien-thoai" target="_blank" title="Thẻ nhớ cho điện thoại">thẻ nhớ</a>&nbsp;tối đa&nbsp;<a href="https://www.thegioididong.com/the-nho-dien-thoai/the-nho-microsd-128gb-class-10-uhs1" target="_blank" title="Phụ kiện thẻ nhớ 128 GB">128 GB</a></em></p>\r\n\r\n<p><strong>Giải tr&iacute; th&iacute;ch hơn</strong></p>\r\n\r\n<p>M&agrave;n h&igrave;nh lớn 9.6 inch đem lại nhiều kh&ocirc;ng gian để giải tr&iacute; cũng như cho c&ocirc;ng việc ri&ecirc;ng của bạn, m&agrave;n h&igrave;nh sử dụng&nbsp;<a href="https://www.thegioididong.com/tin-tuc/loai-man-hinh-tft-lcd-amoled-la-gi--592346#tftlcd" target="_blank" title="Công nghệ màn hình TFT">c&ocirc;ng nghệ TFT</a>&nbsp;kh&ocirc;ng cho h&igrave;nh ảnh qu&aacute; xuất sắc nhưng vẫn ở mức tốt.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/73280/samsung-galaxy-tab-e-96-sm-t561-1-1.jpg" onclick="return false;"><img alt="Không gian giải trí lớn là điểm sáng lớn của Galaxy Tab E" src="https://cdn2.tgdd.vn/Products/Images/522/73280/samsung-galaxy-tab-e-96-sm-t561-1-1.jpg" title="Không gian giải trí lớn là điểm sáng lớn của Galaxy Tab E" /></a></p>\r\n\r\n<p><em>Kh&ocirc;ng gian giải tr&iacute; lớn l&agrave; điểm s&aacute;ng lớn của Galaxy Tab E</em></p>\r\n', 0, 0, 0),
-(66, 'Lenovo Yoga', 'Lenovo-Yoga', 4400000, 1000000, 23, 14, 'lenovo-yoga-tablet-2-1-400x460.png', 0, '2016-05-27', '<h1>Lenovo Yoga Tablet 2 8.0 c&oacute; một thiết kế xoay độc đ&aacute;o c&ugrave;ng loa Dolby cho &acirc;m thanh lớn v&agrave; hay.</h1>\r\n\r\n<p><strong>Đế xoay linh hoạt</strong></p>\r\n\r\n<p>M&aacute;y c&oacute; một thiết kế độc đ&aacute;o với ch&acirc;n đế tr&ograve;n xoay, với 3 khớp ch&iacute;nh bạn c&oacute; thể điều chỉnh để sử dụng cho hợp &yacute; với bạn nhất.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/70130/lenovo-yoga-tablet-2-5.jpg" onclick="return false;"><img alt="Phần chân đế xoay giúp máy có thể để dạng dứng để bạn dễ sử dụng hơn" src="https://cdn1.tgdd.vn/Products/Images/522/70130/lenovo-yoga-tablet-2-5.jpg" title="Phần chân đế xoay giúp máy có thể để dạng dứng để bạn dễ sử dụng hơn" /></a></p>\r\n\r\n<p><em>Phần ch&acirc;n đế xoay gi&uacute;p m&aacute;y c&oacute; thể để dạng dứng để bạn dễ sử dụng hơn</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/70130/lenovo-yoga-tablet-2-7.jpg" onclick="return false;"><img alt="Ngoài 3 khớp chính, bạn có thể tuỳ ý chỉnh các góc độ khác nhau cho hợp mắt với bạn nhất" src="https://cdn3.tgdd.vn/Products/Images/522/70130/lenovo-yoga-tablet-2-7.jpg" title="Ngoài 3 khớp chính, bạn có thể tuỳ ý chỉnh các góc độ khác nhau cho hợp mắt với bạn nhất" /></a></p>\r\n\r\n<p><em>Ngo&agrave;i 3 khớp ch&iacute;nh, bạn c&oacute; thể tuỳ &yacute; chỉnh c&aacute;c g&oacute;c độ kh&aacute;c nhau cho hợp mắt với bạn nhất</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/70130/lenovo-yoga-tablet-2-10.jpg" onclick="return false;"><img alt="Nút nguồn của máy sẽ nằm ở phần chân đế" src="https://cdn.tgdd.vn/Products/Images/522/70130/lenovo-yoga-tablet-2-10.jpg" title="Nút nguồn của máy sẽ nằm ở phần chân đế" /></a></p>\r\n\r\n<p><em>N&uacute;t nguồn của m&aacute;y sẽ nằm ở phần ch&acirc;n đế, cổng&nbsp;<a href="https://www.thegioididong.com/cap-dien-thoai/cap-micro-usb-x-mobile" target="_blank" title="Phụ kiện cáp microUSB">sạc/kết nối microUSB</a>&nbsp;v&agrave; tăng giảm &acirc;m lượng nằm hết ở cạnh tr&aacute;i</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/70130/lenovo-yoga-tablet-2-1-1.jpg" onclick="return false;"><img alt="Rất dễ dàng để bạn xem phim hay trình chiếu bất cứ điều gì cho bạn bè" src="https://cdn2.tgdd.vn/Products/Images/522/70130/lenovo-yoga-tablet-2-1-1.jpg" title="Rất dễ dàng để bạn xem phim hay trình chiếu bất cứ điều gì cho bạn bè" /></a></p>\r\n\r\n<p><em>Rất dễ d&agrave;ng để bạn xem phim hay tr&igrave;nh chiếu bất cứ điều g&igrave; cho bạn b&egrave; c&ugrave;ng xem</em></p>\r\n\r\n<p><strong>&Acirc;m thanh Dolby sống động</strong></p>\r\n\r\n<p>Lenovo Yoga Tablet 2 được ưu &aacute;i với cặp loa đặt ngay ph&iacute;a trước gi&uacute;p &acirc;m thanh ph&aacute;t ra lớn hơn, với c&ocirc;ng nghệ&nbsp;<a href="https://www.thegioididong.com/hoi-dap/cong-nghe-dolby-atmos-tren-smartphone-772074" target="_blank" title="Tìm hiểu Dolby">Dolby</a>&nbsp;nổi tiếng cho chất lượng ph&aacute;t ra rất tốt, kh&ocirc;ng bị r&egrave; qu&aacute; nhiều.</p>\r\n', 0, 0, 0);
+(65, 'Samsung Galaxy Tab', 'Samsung-Galaxy-Tab', 6000000, 300000, 25, 15, 'samsung-galaxy-tab-e-96-sm-t561-400-400x400.png', 0, '2016-05-26', '<h1>Samsung Galaxy Tab E 9.6 l&agrave; một sự lựa chọn cho bạn th&iacute;ch một chiếc m&aacute;y c&oacute; m&agrave;n h&igrave;nh lớn để giải tr&iacute; thoải m&aacute;i hơn nhưng cấu h&igrave;nh kh&ocirc;ng qu&aacute; thấp.</h1>\r\n\r\n<p><strong>Thiết kế với mặt lưng đẹp</strong></p>\r\n\r\n<p>Với m&agrave;n h&igrave;nh lớn 9.6 inch n&ecirc;n m&aacute;y c&oacute;&nbsp;k&iacute;ch thuớc kh&aacute; lớn, trọng lượng&nbsp;495 g&nbsp;kh&aacute; chắc tay khi cầm.</p>\r\n\r\n<p>Mặt lưng c&oacute; c&aacute;c hoạ tiết c&aacute;c chấm nổi vừa tạo điểm nhấn, vừa gi&uacute;p bạn cầm m&aacute;y được chắc chắn hơn, hạn chế trơn tay khi sử dụng.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/73280/samsung-galaxy-tab-e-96-sm-t5612.jpg" onclick="return false;"><img alt="Mặt lưng được làm nhám với hoa văn nổi, cho cảm giác cầm tốt hơn, phần này có thể tháo rời" src="https://cdn1.tgdd.vn/Products/Images/522/73280/samsung-galaxy-tab-e-96-sm-t5612.jpg" title="Mặt lưng được làm nhám với hoa văn nổi, cho cảm giác cầm tốt hơn, phần này có thể tháo rời" /></a></p>\r\n\r\n<p><em>Hoạ tiết ở mặt lưng m&aacute;y, logo&nbsp;<a href="https://www.thegioididong.com/may-tinh-bang-samsung" target="_blank" title="Máy tính bảng hãng Samsung">Samsung</a>&nbsp;đặc trưng</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/73280/samsung-galaxy-tab-e-96-sm-t561-2-1.jpg" onclick="return false;"><img alt="Máy mỏng đẹp, các phím vật lí được tập trung nhiều ở cạnh trái máy" src="https://cdn3.tgdd.vn/Products/Images/522/73280/samsung-galaxy-tab-e-96-sm-t561-2-1.jpg" title="Máy mỏng đẹp, các phím vật lí được tập trung nhiều ở cạnh trái máy" /></a></p>\r\n\r\n<p><em>M&aacute;y mỏng đẹp, kh&ocirc;ng qu&aacute; d&agrave;y</em></p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/73280/samsung-galaxy-tab-e-96-sm-t561-6-1.jpg" onclick="return false;"><img alt="Khe gắn sim và mở rộng thẻ nhớ tối đa 128 GB" src="https://cdn.tgdd.vn/Products/Images/522/73280/samsung-galaxy-tab-e-96-sm-t561-6-1.jpg" title="Khe gắn sim và mở rộng thẻ nhớ tối đa 128 GB" /></a></p>\r\n\r\n<p><em>Khe gắn sim v&agrave; mở rộng&nbsp;<a href="https://www.thegioididong.com/the-nho-dien-thoai" target="_blank" title="Thẻ nhớ cho điện thoại">thẻ nhớ</a>&nbsp;tối đa&nbsp;<a href="https://www.thegioididong.com/the-nho-dien-thoai/the-nho-microsd-128gb-class-10-uhs1" target="_blank" title="Phụ kiện thẻ nhớ 128 GB">128 GB</a></em></p>\r\n\r\n<p><strong>Giải tr&iacute; th&iacute;ch hơn</strong></p>\r\n\r\n<p>M&agrave;n h&igrave;nh lớn 9.6 inch đem lại nhiều kh&ocirc;ng gian để giải tr&iacute; cũng như cho c&ocirc;ng việc ri&ecirc;ng của bạn, m&agrave;n h&igrave;nh sử dụng&nbsp;<a href="https://www.thegioididong.com/tin-tuc/loai-man-hinh-tft-lcd-amoled-la-gi--592346#tftlcd" target="_blank" title="Công nghệ màn hình TFT">c&ocirc;ng nghệ TFT</a>&nbsp;kh&ocirc;ng cho h&igrave;nh ảnh qu&aacute; xuất sắc nhưng vẫn ở mức tốt.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/522/73280/samsung-galaxy-tab-e-96-sm-t561-1-1.jpg" onclick="return false;"><img alt="Không gian giải trí lớn là điểm sáng lớn của Galaxy Tab E" src="https://cdn2.tgdd.vn/Products/Images/522/73280/samsung-galaxy-tab-e-96-sm-t561-1-1.jpg" title="Không gian giải trí lớn là điểm sáng lớn của Galaxy Tab E" /></a></p>\r\n\r\n<p><em>Kh&ocirc;ng gian giải tr&iacute; lớn l&agrave; điểm s&aacute;ng lớn của Galaxy Tab E</em></p>\r\n', 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reports`
+--
+
+CREATE TABLE `reports` (
+  `id` int(10) NOT NULL,
+  `report_date` date NOT NULL,
+  `report_cate` int(10) UNSIGNED NOT NULL,
+  `report_content` text NOT NULL,
+  `report_total` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `reports`
+--
+
+INSERT INTO `reports` (`id`, `report_date`, `report_cate`, `report_content`, `report_total`) VALUES
+(3, '2016-06-27', 14, '[{"product_id":37,"product_sold":15},{"product_id":38,"product_sold":1}]', 1500365),
+(4, '2016-06-25', 14, '[{"product_id":39,"product_sold":5},{"product_id":40,"product_sold":15}]', 1500365),
+(9, '2016-06-26', 14, '[{"product_id":"37","product_sold":4},{"product_id":"50","product_sold":1},{"product_id":"49","product_sold":1},{"product_id":"47","product_sold":1}]', 0),
+(10, '2016-06-26', 15, '[{"product_id":"64","product_sold":6},{"product_id":"65","product_sold":3}]', 0),
+(11, '2016-06-27', 16, '[{"product_id":"59","product_sold":8},{"product_id":"60","product_sold":12},{"product_id":"61","product_sold":15},{"product_id":"62","product_sold":14},{"product_id":"63","product_sold":13}]', 0);
 
 -- --------------------------------------------------------
 
@@ -672,6 +690,7 @@ INSERT INTO `users` (`id`, `user_name`, `user_pass`, `user_mail`, `user_level`) 
 CREATE TABLE `vendors` (
   `id` int(6) UNSIGNED NOT NULL,
   `vendor_name` varchar(20) NOT NULL,
+  `vendor_img` varchar(250) NOT NULL,
   `vendor_slug` varchar(100) NOT NULL,
   `vendor_cate` int(5) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -680,23 +699,22 @@ CREATE TABLE `vendors` (
 -- Dumping data for table `vendors`
 --
 
-INSERT INTO `vendors` (`id`, `vendor_name`, `vendor_slug`, `vendor_cate`) VALUES
-(15, 'Samsung', 'samsung', 14),
-(16, 'Apple', 'apple', 14),
-(17, 'HTC', 'htc', 14),
-(18, 'ASUS', 'asus', 14),
-(19, 'Nokia', 'nokia', 14),
-(20, 'Oppo', 'oppo', 14),
-(21, 'BLACKBERRY', 'blackberry', 14),
-(22, 'Lenovo', 'lenovo', 14),
-(23, 'Lenovo Tablet2', 'Lenovo-Tablet2', 15),
-(24, 'ASUS Tablet', 'ASUS-Tablet', 14),
-(25, 'HUAWEI Tablet', 'huewei-tablet', 15),
-(26, 'Laptop Acer', 'laptop-acer', 16),
-(27, 'Laptop Dell', 'laptop-dell', 16),
-(28, 'Laptop HP', 'laptop-hp', 16),
-(29, 'Laptop Alienware', 'laptop-alienware', 16),
-(30, 'LG', 'LG', 14);
+INSERT INTO `vendors` (`id`, `vendor_name`, `vendor_img`, `vendor_slug`, `vendor_cate`) VALUES
+(15, 'Samsung', 'samsung.gif', 'Samsung', 14),
+(16, 'Apple', 'apple.gif', 'Apple', 14),
+(17, 'HTC', 'htc.gif', 'HTC', 14),
+(18, 'ASUS', 'asus.gif', 'ASUS', 14),
+(19, 'Nokia', 'nokia.gif', 'Nokia', 14),
+(20, 'Oppo', 'oppo.gif', 'Oppo', 14),
+(21, 'BLACKBERRY', 'lg_bberry.gif', 'BLACKBERRY', 14),
+(22, 'Lenovo', 'lg_lenovo.gif', 'Lenovo', 14),
+(24, 'ASUS Tablet', 'asus1.gif', 'ASUS-Tablet', 14),
+(25, 'HUAWEI Tablet', 'lg_huawei.gif', 'HUAWEI-Tablet', 15),
+(26, 'Laptop Acer', 'lg_acer.gif', 'Laptop-Acer', 16),
+(27, 'Laptop Dell', 'lg_dell.gif', 'Laptop-Dell', 16),
+(28, 'Laptop HP', 'lg_hp.gif', 'Laptop-HP', 16),
+(29, 'Laptop Alienware', 'lg_lava.gif', 'Laptop-Alienware', 16),
+(30, 'LG', 'lg_lg.gif', 'LG', 14);
 
 --
 -- Indexes for dumped tables
@@ -729,6 +747,12 @@ ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
   ADD KEY `comment_product` (`comment_product`),
   ADD KEY `comment_user` (`comment_user`);
+
+--
+-- Indexes for table `configs`
+--
+ALTER TABLE `configs`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `details`
@@ -778,6 +802,12 @@ ALTER TABLE `products`
   ADD KEY `product_cate` (`product_cate`);
 
 --
+-- Indexes for table `reports`
+--
+ALTER TABLE `reports`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `specs`
 --
 ALTER TABLE `specs`
@@ -806,7 +836,7 @@ ALTER TABLE `vendors`
 -- AUTO_INCREMENT for table `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `cates`
 --
@@ -816,12 +846,17 @@ ALTER TABLE `cates`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `configs`
+--
+ALTER TABLE `configs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `gifts`
 --
 ALTER TABLE `gifts`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `images`
 --
@@ -836,7 +871,12 @@ ALTER TABLE `image_types`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+--
+-- AUTO_INCREMENT for table `reports`
+--
+ALTER TABLE `reports`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `specs`
 --

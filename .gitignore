@@ -6,3 +6,6 @@
 !*/cache/.htaccess
 /vendor
 /user_guide
+/application/config/database.php
+/application/config/config.php
+/.idea
