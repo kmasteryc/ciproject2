@@ -5,14 +5,14 @@ class Vendor_controller extends MY_Controller
 
     public function __construct()
     {
-        parent::__construct('vendor_model');
+        parent::__construct();
     }
 
     public function ajax_delete()
     {
         $this->auth->check(TRUE, 2, 3);
         $id = $this->input->post('id');
-        $this->vendor_model->delete($id);
+        model('vendor')->delete($id);
     }
 
     public function create()
@@ -31,7 +31,7 @@ class Vendor_controller extends MY_Controller
                 'vendor_cate' => $this->input->post('intcate')
             ];
 
-            $this->vendor_model->do_insert($insert);
+            model('vendor')->do_insert($insert);
 
             // Get last insert ID
             $id = $this->db->insert_id();
@@ -50,10 +50,10 @@ class Vendor_controller extends MY_Controller
             if ($this->upload->do_upload("userfile")) {
                 // Do upload and set success dialog
                 $data = $this->upload->data();
-                $this->vendor_model->do_update($id,['vendor_img'=>$data['file_name']]);
+                model('vendor')->do_update($id,['vendor_img'=>$data['file_name']]);
                 $this->session->set_flashdata('success', 'Create product successfully XD');
             } else {
-                $this->vendor_model->do_delete($id);
+                model('vendor')->do_delete($id);
                 $this->session->set_flashdata('fail', $this->upload->display_errors());
             }
         }
@@ -97,17 +97,17 @@ class Vendor_controller extends MY_Controller
             if ($this->upload->do_upload("userfile")) {
                 // Do upload and set success dialog
                 $data = $this->upload->data();
-                $this->vendor_model->do_update($id,['vendor_img'=>$data['file_name']]);
+                model('vendor')->do_update($id,['vendor_img'=>$data['file_name']]);
                 $update['vendor_img'] = $data['file_name'];
                 $this->session->set_flashdata('success', 'Update product successfully XD');
             }
 
-            $this->vendor_model->update($id, $update);
+            model('vendor')->update($id, $update);
 //            redirect(base_url('vendor/show'));
         }
 
         $data['title'] = 'Edit vendor';
-        $data['vendor'] = $this->vendor_model->show($id)[0];
+        $data['vendor'] = model('vendor')->show($id)[0];
         $data['page'] = 'vendors/edit';
 
         $this->load->myview('layout_admin', $data, $this->get_dialog());
@@ -123,11 +123,11 @@ class Vendor_controller extends MY_Controller
 
         $data['title'] = 'List all vendors :D';
 
-        $data['vendors'] = $vendors = $this->vendor_model->do_get();
+        $data['vendors'] = $vendors = model('vendor')->do_get();
 
         $this->load->model('product_model');
         foreach ($vendors as $k => $vendor) {
-            $products = $this->product_model->do_get([
+            $products = model('product')->do_get([
                 'product_vendor' => $vendor['id']
             ]);
             $data['vendors'][$k]['vendor_products'] = $products;

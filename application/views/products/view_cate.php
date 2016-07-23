@@ -29,9 +29,7 @@ if ($products) {
 
     <div class="col-md-10 col-sm-12 col-xs-12" id="all_product_box">
         <?php
-        $i = 1;
         foreach ($products as $product):
-//                if ($i % 3 == 1) echo '<div class="product_line_row">';
             ?>
 
             <a href="<?= base_url("product/$cateslug/$product[vendor_slug]/$product[product_slug]") ?>">
@@ -100,10 +98,6 @@ if ($products) {
 
             </a>
             <?php
-
-//            if ($i % 3 == 0) echo '</div>';
-
-            ++$i;
         endforeach;
         }
         else {

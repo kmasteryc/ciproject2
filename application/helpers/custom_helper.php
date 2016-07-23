@@ -65,3 +65,12 @@ function my_config($config_name)
     $CI->load->model('config_model');
     return $CI->config_model->do_get(['config_name'=>$config_name])[0]['config_value'];
 }
+
+function model($model){
+    $CI = & get_instance();
+    $model = $model.'_model';
+    if (!isset($CI->$model)) {
+        $CI->load->model($model);
+    }
+    return $CI->$model;
+}

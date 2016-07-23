@@ -10,31 +10,22 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="<?=base_url()?>"><i class="glyphicon glyphicon-home"></i></a>
-            <form class="" id="myformtop" role="search">
-                <div class="input-group">
+
+            <form class="navbar-form navbar-left" id="myformtop" role="search" autocomplete="off">
+                <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search product" id="txt_nav_search">
-
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" id="nav_search" style="height: 33px"><i
-                                class="fa fa-search"></i></button>
-                    </div>
-
-                    <p id="ajax_search_box">
-                        Some content here!
-                    </p>
+                    <p id="ajax_search_box"></p>
                 </div>
 
             </form>
+
+
         </div>
+
         <div id="navbar" class="navbar-collapse collapse">
 
-<!--            <div class="col-md-4" id="nav_search_box">-->
-<!--                -->
-<!---->
-<!--            </div>-->
-
-
             <ul class="nav navbar-nav">
+
                 <?php foreach ($this->cate_model->do_get() as $cate): ?>
                     <li class="dropdown topicon">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -52,11 +43,20 @@
                             ?>
                         </ul>
                     </li>
-
                 <?php endforeach ?>
+
+<!--                <li id="myformtop">-->
+<!--                    <form autocomplete="off">-->
+<!--                        <input type="text" class="form-control" placeholder="Search product" id="txt_nav_search">-->
+<!--                        <p id="ajax_search_box"></p>-->
+<!--                    </form>-->
+<!--                </li>-->
             </ul>
 
+
+
             <ul class="nav navbar-nav navbar-right">
+
                 <?php
                 if ($this->auth->check(FALSE, 0)) {
 //                    echo '<li><a href="' . base_url('user/register') . '"><span class="glyphicon glyphicon-user"></span> Register</a></li>';

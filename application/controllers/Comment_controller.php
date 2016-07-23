@@ -5,7 +5,7 @@ class Comment_Controller extends MY_Controller
 
     public function __construct()
     {
-        parent::__construct('comment_model');
+        parent::__construct();
     }
 
     public function index()
@@ -15,17 +15,14 @@ class Comment_Controller extends MY_Controller
 
     public function ajax_delete($cid)
     {
-        $this->load->model('comment_model');
         $this->auth->check(TRUE, 2, 3);
-        $this->comment_model->do_delete($cid);
+        model('comment')->do_delete($cid);
     }
 
     public function create($productid)
     {
         $this->load->library('form_validation');
         $this->load->helper('form');
-        $this->load->model('comment_model');
-
 
         if ($this->input->post()) {
 
@@ -56,7 +53,7 @@ class Comment_Controller extends MY_Controller
                     $insert['comment_product'] = $this->input->post('intproduct');
                     $insert['comment_content'] = $this->input->post('txtcontent');
                     $insert['comment_time'] = date('Y-m-d G:i:s');
-                    $this->comment_model->do_insert($insert);
+                    model('comment')->do_insert($insert);
 
                     $message = success('Comment successfully');
 
@@ -77,12 +74,10 @@ class Comment_Controller extends MY_Controller
 
     public function show_comment($productid = '', $start = 0)
     {
-        $this->load->model('comment_model');
-
         $this->load->library('pagination');
 
         $config['base_url'] = base_url("comment/show_comment/$productid/");
-        $config['total_rows'] = count($this->comment_model->do_get(
+        $config['total_rows'] = count(model('comment')->do_get(
             [
             'comment_product' => $productid,
                 'comment_parent' => NULL
@@ -107,7 +102,7 @@ class Comment_Controller extends MY_Controller
 
         $this->pagination->initialize($config);
 
-        $comments = $this->comment_model->do_get(
+        $comments = model('comment')->do_get(
             [
                 'comment_product' => $productid,
                 'comment_parent' => NULL
@@ -127,7 +122,7 @@ class Comment_Controller extends MY_Controller
 
         foreach ($comments as $key => $comment)
         {
-            $child = $this->comment_model->do_get(
+            $child = model('comment')->do_get(
                 ['comment_parent'=>$comment['cid']],
                 [
                     [
@@ -165,7 +160,7 @@ class Comment_Controller extends MY_Controller
                 'cate_name' => $this->input->post('txtcate'),
                 'cate_slug' => url_title($this->input->post('txtcate')),
             ];
-            $this->cate_model->do_update($id, $update);
+            model('cate')->do_update($id, $update);
 
             echo json_encode([
                 'success' => 'Edited successfully! XD'
@@ -173,30 +168,6 @@ class Comment_Controller extends MY_Controller
 
         }
     }
-
-//    public function show($start = 0)
-//    {
-//        $this->auth->check(TRUE, 2, 3);
-//
-//        $data['title'] = 'List all comments';
-//
-//        $data['cates'] = $cates = $this->cate_model->do_get();
-//
-//        $this->load->model('product_model');
-//
-//        foreach ($cates as $k=>$cate){
-//            $products = $this->product_model->do_get([
-//                'product_cate' => $cate['id']
-//            ]);
-//            $data['cates'][$k]['cate_products'] = $products;
-//        }
-//
-//        $data['page'] = 'cates/show';
-//        $data['my_js'] = 'cates/show.js';
-//
-//        $this->load->myview('layout_admin', $data);
-//    }
-
 
     public function test()
     {

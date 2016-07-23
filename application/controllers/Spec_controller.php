@@ -11,12 +11,12 @@ class Spec_Controller extends MY_Controller
     {
         $this->auth->check(TRUE, 2, 3);
         $id = $this->input->post('id');
-        $this->spec_model->do_delete($id);
+        model('spec')->do_delete($id);
     }
 
     public function popup_choose()
     {
-        $data['specs'] = $this->spec_model->do_get();
+        $data['specs'] = model('spec')->do_get();
         $this->load->view('specs/popup_choose',$data);
     }
 
@@ -36,7 +36,7 @@ class Spec_Controller extends MY_Controller
                 'spec_presetvalue' => $this->input->post('txtpresetvalue'),
             ];
 
-            $this->spec_model->do_insert($insert);
+            model('spec')->do_insert($insert);
         }
 
         $data['title'] = 'Create spec :D';
@@ -61,11 +61,11 @@ class Spec_Controller extends MY_Controller
                     'spec_presetvalue' => $this->input->post('txtpresetvalue'),
                 ];
 
-                $this->spec_model->do_update($id, $update);
+                model('spec')->do_update($id, $update);
             }
         }
 
-        $data['spec'] = $this->spec_model->do_get($id);
+        $data['spec'] = model('spec')->do_get($id);
         $data['title'] = 'Edit spec :D';
         $data['page'] = 'specs/edit';
 
@@ -78,7 +78,7 @@ class Spec_Controller extends MY_Controller
         $this->auth->check(TRUE, 2, 3);
 
         $data['title'] = 'List all specs :D';
-        $data['specs'] = $this->spec_model->do_get();
+        $data['specs'] = model('spec')->do_get();
         $data['page'] = 'specs/show';
         $data['my_js'] = 'specs/show.js';
 

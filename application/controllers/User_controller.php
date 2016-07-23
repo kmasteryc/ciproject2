@@ -26,7 +26,7 @@ class User_controller extends MY_Controller
                     'user_level' => $this->input->post('intlevel'),
                 ];
 
-                $this->user_model->do_insert($insert);
+                model('user')->do_insert($insert);
             }
         }
 
@@ -85,13 +85,13 @@ class User_controller extends MY_Controller
                     $this->session->set_flashdata("warn", "Why dont you edit something :D");
                 }
             } else {
-                $this->user_model->do_query($sql);
+                model('user')->do_query($sql);
                 $this->session->set_flashdata("success", "Edited successfully :D");
             }
         }
 
         foreach ($args as $arg) {
-            $data_temp[] = $this->user_model->do_get($arg, '', ['id,user_name,user_mail,user_level'])[0];
+            $data_temp[] = model('user')->do_get($arg, '', ['id,user_name,user_mail,user_level'])[0];
         }
         $data['users'] = $data_temp;
         $data['title'] = 'Edit user :D';
@@ -109,7 +109,7 @@ class User_controller extends MY_Controller
         if ($this->input->post()) {
             if ($this->form_validation->run('user/login') === TRUE) {
 
-                $do_login = $this->user_model->login($this->input->post('txtuser'), $this->input->post('txtpass'));
+                $do_login = model('user')->login($this->input->post('txtuser'), $this->input->post('txtpass'));
                 if ($do_login[0] === TRUE) {
                     $this->session->set_flashdata('success', 'Login successfully!');
 
@@ -148,7 +148,7 @@ class User_controller extends MY_Controller
         $this->load->library('pagination');
 
         $config['base_url'] = base_url('/user/show/');
-        $config['total_rows'] = $this->user_model->do_count();
+        $config['total_rows'] = model('user')->do_count();
         $config['per_page'] = 10;
 
         $config['full_tag_open'] = '<ul class="pagination">';
@@ -169,7 +169,7 @@ class User_controller extends MY_Controller
         $this->pagination->initialize($config);
 
         $data['title'] = 'List all users :D';
-        $data['users'] = $this->user_model->do_get('', '', '', ['user_name', 'ASC'], $config['per_page'], $start);
+        $data['users'] = model('user')->do_get('', '', '', ['user_name', 'ASC'], $config['per_page'], $start);
         $data['page'] = 'users/show';
         $data['pagination'] = $this->pagination->create_links();
         $data['my_js'] = 'users/show.js';
@@ -183,7 +183,7 @@ class User_controller extends MY_Controller
         header('Content-Type: application/json');
 
         $arr = json_decode($this->input->post('json'));
-        $this->user_model->do_delete($arr);
+        model('user')->do_delete($arr);
 
         echo json_encode(array('success' => 'You have deleted successfully! XD'));
     }

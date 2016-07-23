@@ -29,7 +29,6 @@ class Image_controller extends MY_Controller
 
     public function create()
     {
-        $this->load->model('product_model');
         $this->auth->check(TRUE, 2, 3);
         $this->load->library('form_validation');
         $this->load->helper('form');
@@ -79,7 +78,7 @@ class Image_controller extends MY_Controller
                 print_r(validation_errors());
             }
         }
-        $products = $this->product_model->do_get('', array('id', 'product_name'), array('product_name', 'ASC'));
+        $products = model('product')->do_get('', array('id', 'product_name'), array('product_name', 'ASC'));
         $data['title'] = 'Create image :D';
         $data['page'] = 'images/create';
         $data['products'] = $products;

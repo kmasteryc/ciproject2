@@ -135,13 +135,13 @@ class Report_model extends MY_Model
         ];
     }
 
-    private function _swapArray($arr)
-    {
-        $new_arr = '';
-        foreach ($arr as $k => $vl) {
-            $new_arr[$vl] = $k;
-
-        }
-        return $new_arr;
-    }
+//    private function _swapArray($arr)
+//    {
+//        $new_arr = '';
+//        foreach ($arr as $k => $vl) {
+//            $new_arr[$vl] = $k;
+//
+//        }
+//        return $new_arr;
+//    }
 }

@@ -12,9 +12,9 @@ class MY_Controller extends MX_Controller
     public function __construct($model = "")
     {
         parent::__construct();
-        if ($model != "") {
-            $this->load->model($model);
-        }
+//        if ($model != "") {
+//            $this->load->model($model);
+//        }
     }
     public function get_dialog()
     {

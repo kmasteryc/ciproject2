@@ -28,7 +28,7 @@ class Report_controller extends MY_Controller
 
         $that_days_report = [];
         foreach ($last_week_days as $day) {
-            $this_day = $this->report_model->do_get(
+            $this_day = model('report')->do_get(
                 [
                     'report_date' => $day,
                     'report_cate' => $cate
@@ -71,7 +71,7 @@ class Report_controller extends MY_Controller
 
         // Foreach all day in month
         foreach ($last_month_days as $day) {
-            $this_day = $this->report_model->do_get(
+            $this_day = model('report')->do_get(
                 [
                     'report_date' => $day
                 ]);
@@ -109,7 +109,7 @@ class Report_controller extends MY_Controller
 
         // Foreach all day in month
         foreach ($cur_month_days as $day) {
-            $this_day = $this->report_model->do_get(
+            $this_day = model('report')->do_get(
                 [
                     'report_date' => $day
                 ]);
@@ -144,7 +144,7 @@ class Report_controller extends MY_Controller
 
     public function test()
     {
-        var_dump($this->report_model->getLastWeekReport());
+        var_dump(model('report')->getLastWeekReport());
     }
 
     private function _processReport($report_all_days)

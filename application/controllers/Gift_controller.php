@@ -5,7 +5,7 @@ class Gift_controller extends MY_Controller
 
     public function __construct()
     {
-        parent::__construct('gift_model');
+        parent::__construct();
     }
 
     public function ajax_delete()
@@ -14,15 +14,13 @@ class Gift_controller extends MY_Controller
 
         $id = $this->input->post('id');
 
-        $this->gift_model->do_delete($id);
+        model('gift')->do_delete($id);
     }
 
     public function create()
     {
         $this->auth->check(TRUE, 2, 3);
-
-        $this->load->model('product_model');
-
+        
         $this->load->library('form_validation');
 
         $this->load->helper('form');
@@ -37,7 +35,7 @@ class Gift_controller extends MY_Controller
                 'gift_enddate' => $this->input->post('txtenddate')
             ];
 
-            $this->gift_model->do_insert($insert_gift);
+            model('gift')->do_insert($insert_gift);
 
             $last_gift = $this->db->insert_id();
 
@@ -65,7 +63,7 @@ class Gift_controller extends MY_Controller
 
         }
 
-        $data['products'] = $this->product_model->do_get('', '', ['id', 'product_name']);
+        $data['products'] = model('product')->do_get('', '', ['id', 'product_name']);
 
         $data['title'] = 'Create gift :D';
         $data['page'] = 'gifts/create';
@@ -99,7 +97,7 @@ class Gift_controller extends MY_Controller
                     'gift_enddate' => $this->input->post('txtenddate')
                 ];
 
-                $this->gift_model->do_update($id, $update_gift);
+                model('gift')->do_update($id, $update_gift);
 
                 $this->load->model('gift_product_model');
 
@@ -129,8 +127,8 @@ class Gift_controller extends MY_Controller
             }
         }
 
-        if ($this->gift_model->do_get($id)) {
-            $data['gifts'] = $this->gift_model->do_get($id)[0];
+        if (model('gift')->do_get($id)) {
+            $data['gifts'] = model('gift')->do_get($id)[0];
         }else{
             $data['gifts'] = '';
         }
@@ -143,7 +141,7 @@ class Gift_controller extends MY_Controller
             $data['old_products'] .= $old_product['product_id'].';';
         }
 
-        $data['products'] = $this->product_model->do_get('', '', ['id', 'product_name']);
+        $data['products'] = model('product')->do_get('', '', ['id', 'product_name']);
 
         $data['title'] = 'Edit gift :D';
         $data['page'] = 'gifts/edit';
@@ -160,7 +158,7 @@ class Gift_controller extends MY_Controller
 
         $data['title'] = 'List all gifts :D';
 
-        $data['gifts'] = $gifts = $this->gift_model->do_get('','','',['gift_startdate','DESC']);
+        $data['gifts'] = $gifts = model('gift')->do_get('','','',['gift_startdate','DESC']);
 
         $this->load->model('gift_product_model');
 

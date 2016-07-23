@@ -16,9 +16,7 @@ class Product_controller extends MY_Controller
 
     public function view_cate($cate)
     {
-        $this->load->model(['detail_model','spec_model','vendor_model']);
-
-        $products = $this->cate_model->do_get(
+        $products = model('cate')->do_get(
             ['cate_slug' => $cate],
             [
                 ['join_table' => 'products', 'join_cond' => 'products.product_cate=cates.id'],
@@ -29,7 +27,7 @@ class Product_controller extends MY_Controller
 
         if ($products) {
             foreach ($products as $product) {
-                $details = $this->detail_model->do_get(
+                $details = model('detail')->do_get(
                     [
                         'detail_product' => $product['id']
                     ],
@@ -52,8 +50,8 @@ class Product_controller extends MY_Controller
             $data['catename'] = $products[0]['cate_name'];
             $data['cateid'] = $products[0]['cid'];
             $data['products'] = $result;
-            $data['vendors'] = $this->vendor_model->do_get(['vendor_cate'=>$data['cateid']]);
-            $data['specs'] = $this->spec_model->do_get();
+            $data['vendors'] = model('vendor')->do_get(['vendor_cate'=>$data['cateid']]);
+            $data['specs'] = model('spec')->do_get();
         }else{
             $data['products'] = '';
         }
@@ -66,9 +64,8 @@ class Product_controller extends MY_Controller
 
     public function view_vendor($cateslug, $vendor)
     {
-        $this->load->model(['detail_model', 'vendor_model', 'cate_model','spec_model']);
 
-        $products = $this->vendor_model->do_get(
+        $products = model('vendor')->do_get(
             ['vendor_slug' => $vendor],
             [
                 ['join_table' => 'products', 'join_cond' => 'products.product_vendor=vendors.id'],
@@ -79,7 +76,7 @@ class Product_controller extends MY_Controller
 
         if ($products) {
             foreach ($products as $product) {
-                $details = $this->detail_model->do_get(
+                $details = model('detail')->do_get(
                     [
                         'detail_product' => $product['id']
                     ],
@@ -112,8 +109,8 @@ class Product_controller extends MY_Controller
         }
 
 
-        $data['vendors'] = $this->vendor_model->do_get('', '', ['vendor_name', 'id']);
-        $data['specs'] = $this->spec_model->do_get();
+        $data['vendors'] = model('vendor')->do_get('', '', ['vendor_name', 'id']);
+        $data['specs'] = model('spec')->do_get();
 
 
         $data['page'] = 'products/view_vendor';
@@ -125,11 +122,10 @@ class Product_controller extends MY_Controller
 
     public function view_product($cateslug, $vendorslug, $productslug)
     {
-        $this->load->model(['detail_model', 'spec_model', 'cate_model', 'vendor_model', 'gift_product_model']);
 
-        $product = $this->product_model->do_get(['product_slug' => $productslug])[0];
+        $product = model('product')->do_get(['product_slug' => $productslug])[0];
 
-        $details = $this->detail_model->do_get(
+        $details = model('detail')->do_get(
             [
                 'detail_product' => $product['id']
             ],
@@ -143,7 +139,7 @@ class Product_controller extends MY_Controller
         );
 
 
-        $gifts = $this->gift_product_model->do_get(
+        $gifts = model('gift_product')->do_get(
             ['product_id'=>$product['id']],
             [
                 [
@@ -153,7 +149,7 @@ class Product_controller extends MY_Controller
             ]
             );
 
-		$similars = $this->product_model->do_get(
+		$similars = model('product')->do_get(
 			"product_price >=
 			(
 			SELECT product_price
@@ -195,9 +191,9 @@ class Product_controller extends MY_Controller
         $data['cateslug'] = $cateslug;
         $data['vendorslug'] = $vendorslug;
 
-        $data['catename'] = $this->cate_model->do_get($product['product_cate'])[0]['cate_name'];
-        $data['cateicon'] = $this->cate_model->do_get($product['product_cate'])[0]['cate_icon'];
-        $data['vendorname'] = $this->vendor_model->do_get($product['product_vendor'])[0]['vendor_name'];
+        $data['catename'] = model('cate')->do_get($product['product_cate'])[0]['cate_name'];
+        $data['cateicon'] = model('cate')->do_get($product['product_cate'])[0]['cate_icon'];
+        $data['vendorname'] = model('vendor')->do_get($product['product_vendor'])[0]['vendor_name'];
 
         $customjs = "product_id = " . $product['id'] . ";";
         $data['customjs'] = $customjs;
@@ -211,7 +207,6 @@ class Product_controller extends MY_Controller
 
     public function create()
     {
-        $this->load->model(['spec_model', 'detail_model']);
         $this->load->library('form_validation');
         $this->load->helper('form');
 
@@ -232,7 +227,7 @@ class Product_controller extends MY_Controller
                         'product_info' => $this->input->post('txtinfo')
                     ];
 
-                    $this->product_model->do_insert($insert);
+                    model('product')->do_insert($insert);
                     $lastid = $this->db->insert_id();
 
                     // Get last insert ID
@@ -259,7 +254,7 @@ class Product_controller extends MY_Controller
                         $specvalues = explode(',', $this->input->post('specvalues'));
 
                         foreach ($speckeys as $specid => $speckey) {
-                            $spec = $this->spec_model->do_get($speckey);
+                            $spec = model('spec')->do_get($speckey);
                             $oldpreset = to_array($spec[0]['spec_presetvalue']);
                             $newpreset = $specvalues[$specid];
 
@@ -274,7 +269,7 @@ class Product_controller extends MY_Controller
                                     'spec_presetvalue' => $newnewpreset
                                 ];
 
-                                $this->spec_model->do_update($speckey, $update);
+                                model('spec')->do_update($speckey, $update);
 
                             }
 
@@ -284,7 +279,7 @@ class Product_controller extends MY_Controller
                                 'detail_spec' => $speckey,
                                 'detail_value' => $specvalues[$specid]
                             ];
-                            $this->detail_model->do_insert($insert_detail);
+                            model('detail')->do_insert($insert_detail);
                         }
                         // Create thumbnail.
                         $img = new Eventviva\ImageResize($data['full_path']);
@@ -292,10 +287,10 @@ class Product_controller extends MY_Controller
                         $thumb = $data['file_path'] . 'thumbs/' . $data['raw_name'] . $data['file_ext'];
                         $img->save($thumb);
                         // Update product table with new product image
-                        $this->product_model->do_update($id, array('product_img' => $data['file_name']));
+                        model('product')->do_update($id, array('product_img' => $data['file_name']));
 
                     } else {
-                        $this->product_model->do_delete($id);
+                        model('product')->do_delete($id);
                         $this->session->set_flashdata('fail', $this->upload->display_errors());
                     }
 
@@ -308,7 +303,7 @@ class Product_controller extends MY_Controller
         }
 
 
-        $data['specs'] = $this->spec_model->do_get();
+        $data['specs'] = model('spec')->do_get();
         $data['title'] = 'Create product';
         $data['page'] = 'products/create';
         $data['my_js'] = 'products/create.js';
@@ -319,7 +314,6 @@ class Product_controller extends MY_Controller
 
     public function edit($id = '')
     {
-        $this->load->model(['detail_model', 'spec_model']);
         $this->load->library('form_validation');
         $this->load->helper('form');
 
@@ -342,7 +336,7 @@ class Product_controller extends MY_Controller
                     'product_info' => $this->input->post('txtinfo')
                 ];
 
-                $this->product_model->do_update($id, $update);
+                model('product')->do_update($id, $update);
 
                 // Update specs table if new specs are defined
                 $speckeys = explode(',', $this->input->post('speckeys'));
@@ -350,7 +344,7 @@ class Product_controller extends MY_Controller
 
                 foreach ($speckeys as $specid => $speckey) {
 
-                    $spec = $this->spec_model->do_get($speckey);
+                    $spec = model('spec')->do_get($speckey);
                     $oldpreset = to_array($spec[0]['spec_presetvalue']);
                     $newpreset = $specvalues[$specid];
                     // Insert new preset if its not exist
@@ -363,7 +357,7 @@ class Product_controller extends MY_Controller
                         $update = array(
                             'spec_presetvalue' => $newnewpreset
                         );
-                        $this->spec_model->do_update($speckey, $update);
+                        model('spec')->do_update($speckey, $update);
 
                     }
                     // Update details table
@@ -372,14 +366,14 @@ class Product_controller extends MY_Controller
                     ];
 
 					// Check if there has previous value => update
-					if ($this->detail_model->do_get(['detail_product' => $id, 'detail_spec' => $speckey]))
+					if (model('detail')->do_get(['detail_product' => $id, 'detail_spec' => $speckey]))
 					{
 						// Use 2 primary keys on where clause
-						$this->detail_model->do_update(array('detail_product' => $id, 'detail_spec' => $speckey), $update_detail);
+						model('detail')->do_update(array('detail_product' => $id, 'detail_spec' => $speckey), $update_detail);
 					}
 					else // else insert new value
 					{
-						$this->detail_model->do_insert(['detail_product' => $id, 'detail_spec' => $speckey, 'detail_value' => $specvalues[$specid]]);
+						model('detail')->do_insert(['detail_product' => $id, 'detail_spec' => $speckey, 'detail_value' => $specvalues[$specid]]);
 					}
                 }
                 // Do if change product image
@@ -416,10 +410,10 @@ class Product_controller extends MY_Controller
                         $thumb = $data['file_path'] . 'thumbs/' . $data['file_name'];
                         $img->save($thumb);
                         // Update product table with new product image
-                        $this->product_model->do_update($id, array('product_img' => $data['file_name']));
+                        model('product')->do_update($id, array('product_img' => $data['file_name']));
 
                     } else {
-                        //$this->product_model->do_delete($id);
+                        //model('product')->do_delete($id);
                         $this->session->set_flashdata('fail', $this->upload->display_errors());
                     }
                 }
@@ -429,7 +423,7 @@ class Product_controller extends MY_Controller
         }
 
         // Get detail by product ID
-        $details = $this->detail_model->do_get(
+        $details = model('detail')->do_get(
             ['detail_product' => $id],
             [
                 [
@@ -443,7 +437,7 @@ class Product_controller extends MY_Controller
             $data['details'] = $details;
         }
 
-        $data['product'] = $this->product_model->do_get($id);
+        $data['product'] = model('product')->do_get($id);
 
         $data['title'] = 'Edit product ' . $id;
         $data['page'] = 'products/edit';
@@ -454,12 +448,11 @@ class Product_controller extends MY_Controller
 
     public function search_ajax()
     {
-        $this->load->model(['detail_model', 'product_model', 'spec_model']);
 
         if ($this->input->get('txtsearch')) {
 
             $this->db->like('product_name', $this->input->get('txtsearch'));
-            $products = $this->product_model->do_get(
+            $products = model('product')->do_get(
                 '',
                 [
                     ['join_table' => 'vendors', 'join_cond' => 'products.product_vendor=vendors.id'],
@@ -475,7 +468,6 @@ class Product_controller extends MY_Controller
 
     public function search()
     {
-        $this->load->model(['detail_model', 'product_model', 'spec_model']);
         $this->load->library('form_validation');
 
         $cond = '';
@@ -517,7 +509,7 @@ class Product_controller extends MY_Controller
 
                             $need_product++;
 
-                            $get_product_with_spec = $this->detail_model->do_get(
+                            $get_product_with_spec = model('detail')->do_get(
                                 [
                                     'detail_spec' => $spec_id,
                                     'detail_value' => $spec_value
@@ -560,7 +552,7 @@ class Product_controller extends MY_Controller
 
             }
 
-			$products = $this->product_model->do_get(
+			$products = model('product')->do_get(
                 $cond,
                 [
                     ['join_table' => 'vendors', 'join_cond' => 'products.product_vendor=vendors.id'],
@@ -571,7 +563,7 @@ class Product_controller extends MY_Controller
 
             if ($products) {
                 foreach ($products as $product) {
-                    $details = $this->detail_model->do_get(
+                    $details = model('detail')->do_get(
                         [
                             'detail_product' => $product['id']
                         ],
@@ -595,8 +587,8 @@ class Product_controller extends MY_Controller
         $data['title'] = 'Search';
 
 
-        $data['vendors'] = $this->vendor_model->do_get('', '', ['vendor_name', 'id']);
-        $data['specs'] = $this->spec_model->do_get();
+        $data['vendors'] = model('vendor')->do_get('', '', ['vendor_name', 'id']);
+        $data['specs'] = model('spec')->do_get();
 
         $data['count_results'] = isset($products)?count($products):0;
         $data['page'] = 'products/search';
@@ -610,7 +602,7 @@ class Product_controller extends MY_Controller
         $this->auth->check(TRUE, 2, 3);
 
         $data['title'] = 'List all product :D';
-        $data['products'] = $this->product_model->do_get('',[
+        $data['products'] = model('product')->do_get('',[
             [
                 'join_table' => 'cates',
                 'join_cond' => 'cates.id=products.product_cate'
@@ -630,7 +622,7 @@ class Product_controller extends MY_Controller
 
     public function get_info($productid = 1)
     {
-        $product = $this->product_model->do_get($productid);
+        $product = model('product')->do_get($productid);
         echo preg_replace('/(.*)<h1>(.*)<\/h1>/', ' ', $product[0]['product_info']);
     }
 
@@ -641,7 +633,7 @@ class Product_controller extends MY_Controller
         $this->form_validation->set_rules('id', 'ID', 'numeric|required');
         if ($this->form_validation->run() === TRUE) {
             $id = $this->input->post('id');
-            $this->product_model->do_delete($id);
+            model('product')->do_delete($id);
         }
     }
 

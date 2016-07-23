@@ -6,6 +6,6 @@
 			  <h4><b>ADD TO CART</b></h4>
 			  And buy more products
 		  </button>
-		  Gọi đặt mua 1800.1060 hoặc (08) 38 102.102
+		  Call <?=my_config('sale_phone')?> for more information.
 	  </div>
 </div>
